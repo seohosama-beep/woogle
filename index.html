@@ -7,7 +7,7 @@
 <link rel="icon" href="woogle-logo.png">
 <link rel="apple-touch-icon" href="woogle-logo.png">
 <title>우글우글</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
 <style>
 [hidden]{display:none!important}
 img{max-width:100%}
@@ -391,6 +391,27 @@ body::before{background:var(--cream)}
 .lg-sub{text-align:center;line-height:1.6;font-weight:500;font-size:17px;color:var(--ink-soft)}
 .lg-sub b{color:var(--ink);font-weight:800}
 @media (prefers-reduced-motion:no-preference){.trio .o2{animation:bob 3.2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px)}}}
+
+/* ===== 가을 독서 분위기 ===== */
+:root{--paper:#FFFBF2;--cream:#F5E9D6;--leather:#7E4A2A;--leather-d:#5E341C;--maple:#C2571F;--serif:"Gowun Batang","Noto Serif KR",serif}
+body{background:#EADBC3}
+.app,.app.region-guri,.app.region-nam,.app.region-jin,.app.region-home{background-color:var(--cream);background-image:radial-gradient(120% 60% at 50% 0%,rgba(255,250,238,.9),rgba(255,250,238,0) 70%),repeating-linear-gradient(0deg,rgba(126,74,42,.045) 0 1px,transparent 1px 34px)}
+.top{background:rgba(245,233,214,.96)}
+.card h3,.list-head h2,.sheet-head h2,.panel h3,.cmts h3,.empty strong,.profile .name,.lg-sub,.hero p,.preview{font-family:var(--serif)}
+.card h3{font-weight:700;letter-spacing:-.3px}
+.hero p{font-size:19px;color:var(--leather)}
+.cta,.btn{background:var(--leather);box-shadow:0 3px 0 var(--leather-d)}
+.cta:active,.btn:active{box-shadow:0 1px 0 var(--leather-d)}
+.cmt-form button{background:var(--leather)}
+.mtabs button[aria-selected="true"]{background:var(--leather);border-color:var(--leather)}
+.card{position:relative;background:var(--paper);border:1px solid #E6D3B6;border-radius:6px 18px 18px 6px;box-shadow:inset 6px 0 0 #E9D7BB,0 2px 6px rgba(94,52,28,.08);padding-left:22px}
+.card::after{content:"";position:absolute;top:-2px;right:18px;width:14px;height:26px;background:var(--strong);clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%);opacity:.9}
+.card .body{line-height:1.8}
+.lg-form{background:var(--paper)!important;border:1px solid #E6D3B6;border-radius:8px 20px 20px 8px;box-shadow:inset 6px 0 0 #E9D7BB,0 8px 20px rgba(94,52,28,.1)!important}
+.lg-sub{font-size:18px;color:var(--leather)}
+.lg-sub b{color:var(--leather-d)}
+.empty{font-family:var(--serif)}
+.panel,.profile{border-radius:8px 18px 18px 8px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
