@@ -7,7 +7,7 @@
 <link rel="icon" href="woogle-logo.png">
 <link rel="apple-touch-icon" href="woogle-logo.png">
 <title>우글우글</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap">
 <style>
 [hidden]{display:none!important}
 img{max-width:100%}
@@ -443,6 +443,17 @@ body{background:#E4DCC8}
 .hero p,.lg-sub{color:var(--leather)}.lg-sub b{color:var(--leather-d)}
 .profile .name .adm,.me .adm{background:#C8892B}
 .leaf:nth-of-type(1) path:first-child{fill:#C8892B}.leaf:nth-of-type(2) path:first-child{fill:#8E3B46}.leaf:nth-of-type(3) path:first-child{fill:#4C7A55}.leaf:nth-of-type(4) path:first-child{fill:#B5462F}
+
+/* 사진 */
+.post-photo{display:block;width:100%;max-height:360px;object-fit:cover;border-radius:12px;margin-top:6px;background:#ECE5D3}
+.photo-pick{display:flex;align-items:center;justify-content:center;min-height:120px;border:2px dashed #CFC5AE;border-radius:14px;background:#F7F2E6;cursor:pointer;overflow:hidden}
+.photo-pick img{display:block;width:100%;max-height:260px;object-fit:cover}
+.pp-empty{font-size:19px;color:var(--ink-soft)}
+.pp-del{margin-top:8px;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:16px}
+/* 귀여운 글씨체 전체 (주아체) */
+:root{--font:"Jua","Noto Sans KR","Apple SD Gothic Neo",sans-serif;--serif:"Jua","Noto Sans KR",sans-serif}
+body,button,input,textarea,select{font-family:var(--font)!important;font-synthesis:none}
+body{letter-spacing:0}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -459,8 +470,14 @@ body{background:#E4DCC8}
 (function(){
 "use strict";
 /* ---------- 기본값 ---------- */
-const REGIONS=[{k:"guri",n:"구리권",cls:"region-guri",b:"rg-guri",p:"g",col:"#01A1FB"},{k:"nam",n:"남양주권",cls:"region-nam",b:"rg-nam",p:"n",col:"#FCCB01"},{k:"jin",n:"진접권",cls:"region-jin",b:"rg-jin",p:"j",col:"#FC9EC9"}];
+const REGIONS=[{k:"guri",n:"기원문",cls:"region-guri",b:"rg-guri",p:"g",col:"#01A1FB"},{k:"nam",n:"활동 인증",cls:"region-nam",b:"rg-nam",p:"n",col:"#FCCB01"},{k:"jin",n:"연찬 보고",cls:"region-jin",b:"rg-jin",p:"j",col:"#FC9EC9"}];
 const RG=Object.fromEntries(REGIONS.map(r=>[r.k,r]));
+const BD={
+ guri:{lead:"마음 쓰이는 사람을 위해 함께 기원해요",cta:"나의 기원문 공유하기",list:"등록된 기원 이야기",write:"나의 기원문 쓰기",submit:"기원문 올리기",tl:"기원할 사람",tph:"예: 우리 엄마, 김민준",bl:"기원 내용",bph:"고민이나 바라는 일을 자유롭게 적어 주세요.",terr:"기원할 사람의 이름을 적어 주세요.",withTxt:"명이 함께 기원 중",likeLbl:"함께 기원하기",likedLbl:"함께 기원했어요"},
+ nam:{lead:"오늘 한 활동을 인증하고 서로 응원해요",cta:"활동 인증 올리기",list:"활동 인증 모음",write:"활동 인증 쓰기",submit:"인증 올리기",tl:"제목",tph:"예: 오늘 아침 독서 30분",bl:"인증 내용",bph:"무엇을 했는지 자유롭게 적어 주세요.",terr:"제목을 적어 주세요.",withTxt:"명이 함께 응원 중",likeLbl:"응원하기",likedLbl:"응원했어요"},
+ jin:{lead:"연찬한 내용을 나누고 함께 배워요",cta:"연찬 보고 쓰기",list:"연찬 보고 모음",write:"연찬 보고 쓰기",submit:"보고 올리기",tl:"제목",tph:"예: 10월 넷째 주 연찬 보고",bl:"보고 내용",bph:"연찬한 내용과 느낀 점을 적어 주세요.",terr:"제목을 적어 주세요.",withTxt:"명이 함께 공감 중",likeLbl:"공감하기",likedLbl:"공감했어요"}
+};
+const postTitle=p=>p.region==="guri"?titleOf(p.target):p.target;
 const CATS=["건강","시험","취업","우정&연애","가족"];
 const ADMINS=["박세은","김수지","박현빈","김주희"];
 const BODY_MAX=500, TARGET_MAX=20, NICK_MAX=10, CMT_MAX=200;
@@ -494,13 +511,13 @@ const SB_KEY="sb_publishable_dc-byJXrTOZTlWkQv_FarQ_huCH8zZB";
 const COLLS=["users","posts","likes","comments"];
 const S={users:new Map(),posts:new Map(),likes:new Map(),comments:new Map()};
 const store={mode:"loading",sb:null,canWrite:true};
-const RK={guri:"구리권",nam:"남양주권",jin:"진접권"}, KR={"구리권":"guri","남양주권":"nam","진접권":"jin"};
+const RK={guri:"기원문",nam:"활동 인증",jin:"연찬 보고"}, KR={"기원문":"guri","활동 인증":"nam","연찬 보고":"jin","구리권":"guri","남양주권":"nam","진접권":"jin"};
 const iso=v=>v==null?null:new Date(v).toISOString(), tms=v=>v?Date.parse(v):null;
 const MAP={
  users:{to:d=>({nick:d.nick,region:d.region?RK[d.region]:null,created_at:iso(d.createdAt)}),
         from:r=>({nick:r.nick,region:r.region?KR[r.region]||null:null,createdAt:tms(r.created_at)})},
- posts:{to:d=>({target:d.target,body:d.body,cats:d.cats||[],region:RK[d.region]||d.region,author:d.author,author_hx:d.authorHx,created_at:iso(d.createdAt),edited_at:iso(d.editedAt),deleted:!!d.deleted,deleted_at:iso(d.deletedAt),deleted_by:d.deletedBy||null,restored_at:iso(d.restoredAt),example:!!d.example}),
-        from:r=>({target:r.target,body:r.body,cats:r.cats||[],region:KR[r.region]||"guri",author:r.author,authorHx:r.author_hx,createdAt:tms(r.created_at),editedAt:tms(r.edited_at),deleted:!!r.deleted,deletedAt:tms(r.deleted_at),deletedBy:r.deleted_by,restoredAt:tms(r.restored_at),example:!!r.example})},
+ posts:{to:d=>({target:d.target,body:d.body,cats:d.cats||[],region:RK[d.region]||d.region,author:d.author,author_hx:d.authorHx,created_at:iso(d.createdAt),edited_at:iso(d.editedAt),deleted:!!d.deleted,deleted_at:iso(d.deletedAt),deleted_by:d.deletedBy||null,restored_at:iso(d.restoredAt),example:!!d.example,photo:d.photo||null}),
+        from:r=>({target:r.target,body:r.body,cats:r.cats||[],region:KR[r.region]||"guri",author:r.author,authorHx:r.author_hx,createdAt:tms(r.created_at),editedAt:tms(r.edited_at),deleted:!!r.deleted,deletedAt:tms(r.deleted_at),deletedBy:r.deleted_by,restoredAt:tms(r.restored_at),example:!!r.example,photo:r.photo||null})},
  likes:{to:d=>({post_id:d.postId,nick_hx:d.nickHx,region:RK[d.region]||d.region,created_at:iso(d.createdAt)}),
         from:r=>({postId:r.post_id,nickHx:r.nick_hx,region:KR[r.region]||r.region,createdAt:tms(r.created_at)})},
  comments:{to:d=>({post_id:d.postId,body:d.body,author:d.author,author_hx:d.authorHx,created_at:iso(d.createdAt),edited_at:iso(d.editedAt),deleted:!!d.deleted,deleted_at:iso(d.deletedAt),deleted_by:d.deletedBy||null}),
@@ -587,12 +604,13 @@ function postCard(p,opts={}){
   const tools=(mine||isAdmin())?`<div class="tools">${mine?`<button class="icon-btn" data-act="edit" data-id="${p.id}" aria-label="기원문 수정">${I.pen}</button>`:""}<button class="icon-btn del" data-act="delpost" data-id="${p.id}" aria-label="기원문 삭제">${I.trash}</button></div>`:"";
   return `<article class="card" data-post="${p.id}">
    <div class="card-top"><div class="badges">${opts.showRegion?`<span class="badge ${r.b}">${r.n}</span>`:""}${(p.cats||[]).map(c=>`<span class="badge">${esc(c)}</span>`).join("")}${p.example?'<span class="badge ex">예시</span>':""}</div>${tools}</div>
-   <h3>${esc(titleOf(p.target))}</h3>
+   <h3>${esc(postTitle(p))}</h3>
    <div class="meta"><b>${esc(p.author)}</b> · ${ago(p.createdAt)}${p.editedAt?" · 수정됨":""}</div>
+   ${p.photo?`<img class="post-photo" src="${esc(p.photo)}" alt="첨부 사진" loading="lazy">`:""}
    <p class="body${open?"":" clamp"}" ${open?"":`data-act="expand" data-id="${p.id}"`}>${esc(p.body)}</p>
    <div class="card-foot">
-     <button class="heart${on?" on":""}${st.justLiked===p.id?" pop":""}" data-act="like" data-id="${p.id}" ${on?'disabled aria-label="함께 기원했어요"':'aria-label="함께 기원하기"'}>${I.heart}${st.justLiked===p.id?burst():""}</button>
-     <span class="with"><b>${n}</b>명이 함께 기원 중</span>
+     <button class="heart${on?" on":""}${st.justLiked===p.id?" pop":""}" data-act="like" data-id="${p.id}" ${on?`disabled aria-label="${BD[p.region].likedLbl}"`:`aria-label="${BD[p.region].likeLbl}"`}>${I.heart}${st.justLiked===p.id?burst():""}</button>
+     <span class="with"><b>${n}</b>${BD[p.region]?BD[p.region].withTxt:"명이 함께 기원 중"}</span>
      ${opts.full?"":`<button class="cmt-btn" data-act="open" data-id="${p.id}">${I.bubble}<span>댓글 ${cc}</span></button>`}
    </div></article>`;
 }
@@ -605,13 +623,13 @@ function renderMain(){
   list.sort(st.sort==="new"?(a,b)=>b.createdAt-a.createdAt:(a,b)=>(likeCount(b.id)-likeCount(a.id))||(b.createdAt-a.createdAt));
   const total=livePosts().filter(p=>p.region===st.region).length;
   $("#view").innerHTML=`${headerHTML()}
-  <nav class="tabs gut" role="tablist" aria-label="지역">${REGIONS.map(x=>`<button class="tab" role="tab" aria-selected="${x.k===st.region}" data-act="region" data-r="${x.k}"><span class="dotc" style="background:${x.col}"></span>${x.n}</button>`).join("")}</nav>
-  <section class="hero gut"><p>${r.n} 이웃들의 기원을 함께 모아요</p>
-   <button class="cta" data-act="write" ${store.canWrite?"":"disabled"}>${I.spark}나의 기원문 공유하기</button></section>
+  <nav class="tabs gut" role="tablist" aria-label="게시판">${REGIONS.map(x=>`<button class="tab" role="tab" aria-selected="${x.k===st.region}" data-act="region" data-r="${x.k}"><span class="dotc" style="background:${x.col}"></span>${x.n}</button>`).join("")}</nav>
+  <section class="hero gut"><p>${BD[st.region].lead}</p>
+   <button class="cta" data-act="write" ${store.canWrite?"":"disabled"}>${I.spark}${BD[st.region].cta}</button></section>
   <section class="gut">
-   <div class="list-head"><h2>등록된 기원 이야기<small>${total}</small></h2>
+   <div class="list-head"><h2>${BD[st.region].list}<small>${total}</small></h2>
     <div class="seg" role="group" aria-label="정렬"><button data-act="sort" data-s="new" aria-pressed="${st.sort==="new"}">최신순</button><button data-act="sort" data-s="like" aria-pressed="${st.sort==="like"}">기원 많은순</button></div></div>
-   <div class="filters" role="group" aria-label="고민 분류">${CATS.map(c=>`<button class="chip" data-act="cat" data-c="${esc(c)}" aria-pressed="${st.cats.has(c)}">${esc(c)}</button>`).join("")}${st.cats.size?`<button class="chip" data-act="catclear">전체 보기</button>`:""}</div>
+   ${st.region==="guri"?`<div class="filters" role="group" aria-label="고민 분류">${CATS.map(c=>`<button class="chip" data-act="cat" data-c="${esc(c)}" aria-pressed="${st.cats.has(c)}">${esc(c)}</button>`).join("")}${st.cats.size?`<button class="chip" data-act="catclear">전체 보기</button>`:""}</div>`:""}
    <div class="cards">${list.length?list.map(p=>postCard(p)).join(""):emptyHTML(total)}</div>
   </section>
   <div class="trio trio-sm"><img class="o o1" src="oct-blue.png" alt=""><img class="o o2" src="oct-yellow.png" alt=""><img class="o o3" src="oct-pink.png" alt=""></div>`;
@@ -619,7 +637,7 @@ function renderMain(){
 }
 function emptyHTML(total){
   if(total)return `<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>고른 분류의 기원문이 없어요</strong>다른 분류를 골라 보거나 전체 보기를 눌러 주세요.</div>`;
-  return `<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>아직 ${RG[st.region].n}에 올라온 기원문이 없어요</strong>위의 ‘나의 기원문 공유하기’로 첫 기원을 남겨 주세요.</div>`;
+  return `<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>아직 ${RG[st.region].n}에 올라온 글이 없어요</strong>위의 ‘${BD[st.region].cta}’로 첫 글을 남겨 주세요.</div>`;
 }
 
 function renderMy(){
@@ -635,10 +653,9 @@ function renderMy(){
   $("#view").innerHTML=`${headerHTML()}
   <div class="gut"><button class="back" data-act="home">← 기원 이야기로</button>
    <section class="profile"><div class="name">${esc(st.nick)}${isAdmin()?'<span class="adm">관리자</span>':""}</div>
-    <div class="belong">${reg?`소속 <span class="badge ${reg.b}">${reg.n}</span>`:`<span class="none">기원문을 작성해서 소속을 알려주세요</span>`}</div>
-    <div class="pstats"><div><b>${mineP.length}</b><span>내가 쓴 기원문</span></div><div><b>${likedP.length}</b><span>함께 기원한 기원문</span></div></div>
+    <div class="pstats"><div><b>${mineP.length}</b><span>내가 쓴 글</span></div><div><b>${likedP.length}</b><span>응원한 글</span></div></div>
    </section>
-   <div class="mtabs" role="tablist"><button role="tab" data-act="mtab" data-t="mine" aria-selected="${st.mtab==="mine"}">내가 쓴 기원문</button><button role="tab" data-act="mtab" data-t="liked" aria-selected="${st.mtab==="liked"}">함께 기원한 기원문</button>${isAdmin()?`<button role="tab" data-act="mtab" data-t="dash" aria-selected="${st.mtab==="dash"}">대시보드</button>`:""}</div>
+   <div class="mtabs" role="tablist"><button role="tab" data-act="mtab" data-t="mine" aria-selected="${st.mtab==="mine"}">내가 쓴 글</button><button role="tab" data-act="mtab" data-t="liked" aria-selected="${st.mtab==="liked"}">응원한 글</button>${isAdmin()?`<button role="tab" data-act="mtab" data-t="dash" aria-selected="${st.mtab==="dash"}">대시보드</button>`:""}</div>
    ${body}
    <div style="display:flex;justify-content:center;padding-block:4px 30px"><button class="linkish" data-act="logout">닉네임 바꾸기</button></div>
   </div>
@@ -653,7 +670,7 @@ function stats(rk){
   const likes=[...S.likes.values()].filter(l=>ids.has(l.postId));
   const users=[...S.users.values()];
   return {
-    users:rk==="all"?users.length:users.filter(u=>u.region===rk).length,
+    users:rk==="all"?users.length:new Set(posts.map(p=>p.authorHx)).size,
     posts:posts.length,
     people:new Set(likes.map(l=>l.nickHx)).size,
     likes:likes.length,
@@ -665,14 +682,14 @@ function dashHTML(){
   const rk=st.dRegion, s=stats(rk), unassigned=[...S.users.values()].filter(u=>!u.region).length;
   const maxP=Math.max(1,...s.cats.map(x=>x.posts)), sumCat=s.cats.reduce((a,x)=>a+x.posts,0);
   const rows=REGIONS.map(r=>({r,s:stats(r.k)}));
-  const dels=[...S.posts.values()].filter(p=>p.deleted).map(p=>({type:"post",id:p.id,at:p.deletedAt,by:p.deletedBy,txt:titleOf(p.target),sub:p.author}))
-    .concat([...S.comments.values()].filter(c=>c.deleted).map(c=>{const p=S.posts.get(c.postId);return {type:"cmt",id:c.id,at:c.deletedAt,by:c.deletedBy,txt:c.body,sub:c.author+(p?" · "+titleOf(p.target):"")}})).sort((a,b)=>(b.at||0)-(a.at||0));
+  const dels=[...S.posts.values()].filter(p=>p.deleted).map(p=>({type:"post",id:p.id,at:p.deletedAt,by:p.deletedBy,txt:postTitle(p),sub:p.author}))
+    .concat([...S.comments.values()].filter(c=>c.deleted).map(c=>{const p=S.posts.get(c.postId);return {type:"cmt",id:c.id,at:c.deletedAt,by:c.deletedBy,txt:c.body,sub:c.author+(p?" · "+postTitle(p):"")}})).sort((a,b)=>(b.at||0)-(a.at||0));
   const label=rk==="all"?"전체":RG[rk].n;
   return `<div class="dash">
-   <div class="dseg" role="group" aria-label="지역 필터">${[["all","전체"]].concat(REGIONS.map(r=>[r.k,r.n])).map(([k,n])=>`<button data-act="dreg" data-r="${k}" aria-pressed="${rk===k}">${n}</button>`).join("")}</div>
+   <div class="dseg" role="group" aria-label="게시판 필터">${[["all","전체"]].concat(REGIONS.map(r=>[r.k,r.n])).map(([k,n])=>`<button data-act="dreg" data-r="${k}" aria-pressed="${rk===k}">${n}</button>`).join("")}</div>
    <section class="panel"><h3>${label} 한눈에 보기<small>삭제된 글 제외</small></h3>
-    <div class="kpis"><div class="kpi k1"><b>${s.users}</b><span>가입 닉네임</span></div><div class="kpi k2"><b>${s.posts}</b><span>기원문</span></div><div class="kpi k3"><b>${s.people}</b><span>함께 기원한 사람</span></div></div>
-    <p class="note">${rk==="all"?`무소속(아직 기원문을 안 쓴) 닉네임 ${unassigned}명 포함 · 하트 총 ${s.likes}개`:`소속은 처음 기원문을 쓴 지역 기준 · 무소속 ${unassigned}명은 전체에서만 집계 · 하트 총 ${s.likes}개`}</p>
+    <div class="kpis"><div class="kpi k1"><b>${s.users}</b><span>${rk==="all"?"가입 닉네임":"글쓴 사람"}</span></div><div class="kpi k2"><b>${s.posts}</b><span>글</span></div><div class="kpi k3"><b>${s.people}</b><span>함께 기원한 사람</span></div></div>
+    <p class="note">하트 총 ${s.likes}개 · 삭제된 글 제외</p>
    </section>
    <section class="panel"><h3>소분류별 기원문 분포<small>${label} · 중복 선택 포함</small></h3>
     <div class="bars">${s.cats.map(x=>`<div class="bar-row"><span>${esc(x.c)}</span><div class="bar-track"><div class="bar-fill" style="width:${x.posts/maxP*100}%"></div></div><span class="v">${x.posts}건 ${sumCat?Math.round(x.posts/sumCat*100):0}%</span></div>`).join("")}</div>
@@ -681,9 +698,9 @@ function dashHTML(){
     <div class="tbl-wrap"><table><thead><tr><th>분류</th><th>작성한 닉네임</th><th>기원문</th><th>함께 기원</th></tr></thead>
     <tbody>${s.cats.map(x=>`<tr><td>${esc(x.c)}</td><td>${x.writers}</td><td>${x.posts}</td><td>${x.people}</td></tr>`).join("")}</tbody></table></div>
    </section>
-   <section class="panel"><h3>지역별 비교</h3>
-    <div class="tbl-wrap"><table><thead><tr><th>지역</th><th>가입 닉네임</th><th>기원문</th><th>함께 기원</th></tr></thead>
-    <tbody>${rows.map(x=>`<tr><td><span class="badge ${x.r.b}">${x.r.n}</span></td><td>${x.s.users}</td><td>${x.s.posts}</td><td>${x.s.people}</td></tr>`).join("")}<tr><td>무소속</td><td>${unassigned}</td><td>–</td><td>–</td></tr></tbody>
+   <section class="panel"><h3>게시판별 비교</h3>
+    <div class="tbl-wrap"><table><thead><tr><th>게시판</th><th>글쓴 사람</th><th>글</th><th>함께한 사람</th></tr></thead>
+    <tbody>${rows.map(x=>`<tr><td><span class="badge ${x.r.b}">${x.r.n}</span></td><td>${x.s.users}</td><td>${x.s.posts}</td><td>${x.s.people}</td></tr>`).join("")}</tbody>
     <tfoot><tr><td>전체</td><td>${S.users.size}</td><td>${livePosts().length}</td><td>${stats("all").people}</td></tr></tfoot></table></div>
    </section>
    <section class="panel"><h3>삭제 로그<small>${dels.length}건 · 복구 가능</small></h3>
@@ -727,7 +744,7 @@ function drawSheet(){
 function notiHTML(){
   const L=notiList();
   if(!L.length)return `<p class="note" style="padding:14px 0">아직 새 소식이 없어요. 내 기원문에 하트나 댓글이 달리면 여기에 알려 드려요.</p>`;
-  return `<div class="noti">${L.map(n=>`<button data-act="open" data-id="${n.p.id}" class="${n.isNew?"new":""}"><span class="ic">${n.k==="like"?I.heart.replace('<path','<path fill="currentColor" stroke="none"'):I.bubble}</span><span class="t">${n.k==="like"?`누군가 <b>${esc(titleOf(n.p.target))}</b>에 함께 기원했어요`:`<b>${esc(n.c.author)}</b>님의 댓글: ${esc(n.c.body.slice(0,40))}`}<small>${ago(n.at)}${n.isNew?" · 새 소식":""}</small></span></button>`).join("")}</div>`;
+  return `<div class="noti">${L.map(n=>`<button data-act="open" data-id="${n.p.id}" class="${n.isNew?"new":""}"><span class="ic">${n.k==="like"?I.heart.replace('<path','<path fill="currentColor" stroke="none"'):I.bubble}</span><span class="t">${n.k==="like"?`누군가 <b>${esc(postTitle(n.p))}</b>에 마음을 보냈어요`:`<b>${esc(n.c.author)}</b>님의 댓글: ${esc(n.c.body.slice(0,40))}`}<small>${ago(n.at)}${n.isNew?" · 새 소식":""}</small></span></button>`).join("")}</div>`;
 }
 function cmtsHTML(pid){
   const L=liveCmts(pid);
@@ -739,16 +756,20 @@ function cmtsHTML(pid){
 }
 function writeHTML(s){
   const p=s.id?S.posts.get(s.id):null;
-  const d=s.draft||(s.draft={region:p?p.region:st.region,target:p?p.target:"",cats:new Set(p?p.cats:[]),body:p?p.body:""});
-  return `<div class="sheet-head"><h2>${p?"기원문 고치기":"나의 기원문 쓰기"}</h2><button class="x" data-act="close" aria-label="닫기">${I.x}</button></div>
+  const d=s.draft||(s.draft={region:p?p.region:st.region,target:p?p.target:"",cats:new Set(p?p.cats:[]),body:p?p.body:"",photo:p?p.photo||null:null,photoBlob:null,photoPreview:null});
+  return `<div class="sheet-head"><h2>${p?"글 고치기":BD[d.region].write}</h2><button class="x" data-act="close" aria-label="닫기">${I.x}</button></div>
   <form class="form" id="write-form" novalidate>
-   <div><p class="lbl">지역</p><div class="rg-pick" role="group" aria-label="지역">${REGIONS.map(r=>`<button type="button" class="${r.p}" data-act="wreg" data-r="${r.k}" aria-pressed="${d.region===r.k}">${r.n}</button>`).join("")}</div></div>
-   <div><label class="lbl" for="w-target">기원할 사람<small>최대 ${TARGET_MAX}자</small></label><input class="field" id="w-target" maxlength="${TARGET_MAX}" placeholder="예: 우리 엄마, 김민준" value="${esc(d.target)}" autocomplete="off"></div>
-   <div class="preview" id="w-preview"></div>
-   <div><p class="lbl">어떤 기원인가요<small>여러 개 고를 수 있어요</small></p><div class="cat-pick" role="group" aria-label="소분류">${CATS.map(c=>`<button type="button" data-act="wcat" data-c="${esc(c)}" aria-pressed="${d.cats.has(c)}">${esc(c)}</button>`).join("")}</div></div>
-   <div><label class="lbl" for="w-body">기원 내용<small id="w-count">0/${BODY_MAX}</small></label><textarea class="field" id="w-body" maxlength="${BODY_MAX}" placeholder="고민이나 바라는 일을 자유롭게 적어 주세요.">${esc(d.body)}</textarea></div>
+   <div><p class="lbl">게시판</p><div class="rg-pick" role="group" aria-label="게시판">${REGIONS.map(r=>`<button type="button" class="${r.p}" data-act="wreg" data-r="${r.k}" aria-pressed="${d.region===r.k}">${r.n}</button>`).join("")}</div></div>
+   <div><label class="lbl" for="w-target">${BD[d.region].tl}<small>최대 ${TARGET_MAX}자</small></label><input class="field" id="w-target" maxlength="${TARGET_MAX}" placeholder="${BD[d.region].tph}" value="${esc(d.target)}" autocomplete="off"></div>
+   ${d.region==="guri"?`<div class="preview" id="w-preview"></div>
+   <div><p class="lbl">어떤 기원인가요<small>여러 개 고를 수 있어요</small></p><div class="cat-pick" role="group" aria-label="소분류">${CATS.map(c=>`<button type="button" data-act="wcat" data-c="${esc(c)}" aria-pressed="${d.cats.has(c)}">${esc(c)}</button>`).join("")}</div></div>`:""}
+   ${d.region!=="guri"?`<div><p class="lbl">사진<small>1장 · 선택</small></p>
+    <label class="photo-pick" for="w-photo">${(d.photoPreview||d.photo)?`<img src="${esc(d.photoPreview||d.photo)}" alt="선택한 사진">`:`<span class="pp-empty">📷 사진 올리기</span>`}</label>
+    <input type="file" id="w-photo" accept="image/*" hidden>
+    ${(d.photoPreview||d.photo)?`<button type="button" class="pp-del" data-act="wphoto-del">사진 빼기</button>`:""}</div>`:""}
+   <div><label class="lbl" for="w-body">${BD[d.region].bl}<small id="w-count">0/${BODY_MAX}</small></label><textarea class="field" id="w-body" maxlength="${BODY_MAX}" placeholder="${BD[d.region].bph}">${esc(d.body)}</textarea></div>
    <p class="err" id="w-err"></p>
-   <button class="btn" type="submit" id="w-submit">${p?"고친 내용 저장":"기원문 올리기"}</button>
+   <button class="btn" type="submit" id="w-submit">${p?"고친 내용 저장":BD[d.region].submit}</button>
   </form>`;
 }
 function updateWritePreview(){
@@ -766,23 +787,31 @@ async function login(nick){
 }
 async function submitWrite(){
   const s=st.sheet,d=s.draft,err=$("#w-err");const t=d.target.trim(),b=d.body.trim();
-  if(!t){err.textContent="기원할 사람의 이름을 적어 주세요.";$("#w-target").focus();return}
-  if(!d.cats.size){err.textContent="어떤 기원인지 하나 이상 골라 주세요.";return}
-  if(b.length<2){err.textContent="기원 내용을 적어 주세요.";$("#w-body").focus();return}
+  if(!t){err.textContent=BD[d.region].terr;$("#w-target").focus();return}
+  if(d.region==="guri"&&!d.cats.size){err.textContent="어떤 기원인지 하나 이상 골라 주세요.";return}
+  if(b.length<2){err.textContent="내용을 적어 주세요.";$("#w-body").focus();return}
   const btn=$("#w-submit");btn.disabled=true;
   try{
-    if(s.id){await patch("posts",s.id,{target:t,body:b,cats:[...d.cats],region:d.region,editedAt:now()});toast("기원문을 고쳤어요.");}
+    let photo=d.region==="guri"?null:(d.photo||null);
+    if(d.region!=="guri"&&d.photoBlob){
+      btn.textContent="사진 올리는 중…";
+      const path=`${Date.now()}-${Math.random().toString(36).slice(2,8)}.jpg`;
+      const up=await store.sb.storage.from("photos").upload(path,d.photoBlob,{contentType:"image/jpeg",upsert:false});
+      if(up.error){toast("사진을 올리지 못했어요. 다시 시도해 주세요.");throw up.error}
+      photo=store.sb.storage.from("photos").getPublicUrl(path).data.publicUrl;
+    }
+    if(s.id){await patch("posts",s.id,{target:t,body:b,cats:d.region==="guri"?[...d.cats]:[],region:d.region,photo,editedAt:now()});toast("글을 고쳤어요.");}
     else{
       const id=mkId();
-      await put("posts",id,{target:t,body:b,cats:[...d.cats],region:d.region,author:st.nick,authorHx:me().hx,createdAt:now(),deleted:false});
+      await put("posts",id,{target:t,body:b,cats:d.region==="guri"?[...d.cats]:[],region:d.region,photo,author:st.nick,authorHx:me().hx,createdAt:now(),deleted:false});
       const u=myUser();
       if(!u)await put("users",me().hx,{nick:st.nick,region:d.region,createdAt:now()});
       else if(!u.region)await patch("users",me().hx,{region:d.region});
       st.region=d.region;ls.set("woogle.region",d.region);st.sort="new";st.cats.clear();
-      toast(u&&u.region?"기원문을 올렸어요.":`기원문을 올렸어요. 소속이 ${RG[d.region].n}으로 정해졌어요.`);
+      toast("글을 올렸어요.");
     }
     closeSheet();if(!s.id){st.view="main";window.scrollTo({top:0});}render();
-  }catch(e){btn.disabled=false;}
+  }catch(e){btn.disabled=false;btn.textContent=BD[d.region].submit;}
 }
 async function like(id){
   if(liked(id))return;const p=S.posts.get(id);if(!p)return;
@@ -809,7 +838,8 @@ document.addEventListener("click",async e=>{
     case "write":if(!store.canWrite){toast("보기 전용이라 지금은 쓸 수 없어요.");break}openSheet({type:"write"});setTimeout(()=>{const x=$("#w-target");if(x)x.focus()},250);break;
     case "edit":openSheet({type:"write",id});break;
     case "close":closeSheet();break;
-    case "wreg":st.sheet.draft.region=t.dataset.r;document.querySelectorAll('[data-act="wreg"]').forEach(b=>b.setAttribute("aria-pressed",b.dataset.r===t.dataset.r));break;
+    case "wphoto-del":{const d=st.sheet.draft;const tv=$("#w-target"),bv=$("#w-body");if(tv)d.target=tv.value;if(bv)d.body=bv.value;d.photo=null;d.photoBlob=null;d.photoPreview=null;drawSheet();break}
+    case "wreg":{const dr=st.sheet.draft;const tv=$("#w-target"),bv=$("#w-body");if(tv)dr.target=tv.value;if(bv)dr.body=bv.value;dr.region=t.dataset.r;drawSheet();break}
     case "wcat":{const d=st.sheet.draft,c=t.dataset.c;d.cats.has(c)?d.cats.delete(c):d.cats.add(c);t.setAttribute("aria-pressed",d.cats.has(c));$("#w-err").textContent="";break}
     case "like":await like(id);break;
     case "open":openSheet({type:"detail",id});break;
@@ -825,6 +855,23 @@ document.addEventListener("click",async e=>{
     case "startlogin":{const w=$("#start-wrap");if(w)w.hidden=true;const f=$("#nick-form");if(f){f.hidden=false;const i=$("#nick-in");if(i)i.focus();}break}
     case "logout":ls.set("woogle.nick","");st.nick="";st.view="login";closeSheet();$("#view").innerHTML="";render();break;
   }
+});
+async function shrink(file){
+  const url=URL.createObjectURL(file);
+  try{
+    const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=url});
+    const m=1280,sc=Math.min(1,m/Math.max(img.width,img.height));
+    const c=document.createElement("canvas");c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);
+    c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    return await new Promise(r=>c.toBlob(r,"image/jpeg",.82));
+  }finally{URL.revokeObjectURL(url)}
+}
+document.addEventListener("change",async e=>{
+  if(e.target.id!=="w-photo"||!st.sheet||st.sheet.type!=="write")return;
+  const f=e.target.files&&e.target.files[0];if(!f)return;
+  if(!/^image\//.test(f.type)){toast("사진 파일만 올릴 수 있어요.");return}
+  const d=st.sheet.draft;const tv=$("#w-target"),bv=$("#w-body");if(tv)d.target=tv.value;if(bv)d.body=bv.value;
+  try{d.photoBlob=await shrink(f);d.photoPreview=URL.createObjectURL(d.photoBlob);drawSheet();}catch(err){toast("사진을 읽지 못했어요. 다른 사진을 골라 주세요.")}
 });
 document.addEventListener("input",e=>{
   const s=st.sheet;if(!s||s.type!=="write")return;
