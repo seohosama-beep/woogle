@@ -380,6 +380,17 @@ body::before{background:var(--cream)}
 .lg-form .btn{width:100%}
 .lg-crowd{display:block;width:100%;max-width:440px;margin-top:auto;position:relative;z-index:1}
 .leaf{position:absolute;pointer-events:none;opacity:.9}
+
+/* 앞줄 문어 3마리 */
+.trio{display:flex;justify-content:center;align-items:flex-end;width:100%;max-width:440px;margin:auto auto 0;padding:0 10px 14px;position:relative;z-index:1}
+.trio .o{display:block;height:auto}
+.trio .o1{width:31%;transform:rotate(-7deg) translateY(-6px);margin-right:-3%}
+.trio .o2{width:37%;position:relative;z-index:2}
+.trio .o3{width:33%;transform:rotate(6deg) translateY(-4px);margin-left:-3%}
+.trio-sm{max-width:360px;margin-top:6px}
+.lg-sub{text-align:center;line-height:1.6;font-weight:500;font-size:17px;color:var(--ink-soft)}
+.lg-sub b{color:var(--ink);font-weight:800}
+@media (prefers-reduced-motion:no-preference){.trio .o2{animation:bob 3.2s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px)}}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -507,14 +518,14 @@ function renderLogin(){
   $("#view").innerHTML=`<div class="login">
    <svg class="leaf" style="left:7%;top:9%;width:30px;transform:rotate(-25deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#D2602A"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="right:9%;top:15%;width:24px;transform:rotate(35deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#E2A33A"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="left:12%;top:44%;width:20px;transform:rotate(60deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#A94435"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="right:7%;top:50%;width:28px;transform:rotate(-50deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#C98A1E"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg>
    <h1 class="lg-title"><img class="lg-logo" src="woogle-logo-bold.png" alt="우글우글"></h1>
-   <p class="lg-sub">경기 8방면 연찬 육성 프로젝트</p>
+   <p class="lg-sub">우리들에게 써주신 선생님의 <b>글</b>을 연찬하고<br>쑥쑥 성장해서 경기8 체험담 대회에 <b>우글우글</b> 모이자!</p>
    <form id="nick-form" class="lg-form" novalidate>
     <label for="nick-in" class="lg-label">닉네임</label>
     <input class="field" id="nick-in" maxlength="${NICK_MAX}" autocomplete="off" placeholder="닉네임을 입력하세요" value="${esc(st.nick)}">
     <p class="err" id="nick-err"></p>
     <button class="btn" id="nick-go" type="submit">시작하기</button>
    </form>
-   <img class="lg-crowd" src="crowd-cut.png" alt="">
+   <div class="trio"><img class="o o1" src="oct-blue.png" alt=""><img class="o o2" src="oct-yellow.png" alt=""><img class="o o3" src="oct-pink.png" alt=""></div>
   </div>`;
 }
 
@@ -551,7 +562,7 @@ function renderMain(){
    <div class="filters" role="group" aria-label="고민 분류">${CATS.map(c=>`<button class="chip" data-act="cat" data-c="${esc(c)}" aria-pressed="${st.cats.has(c)}">${esc(c)}</button>`).join("")}${st.cats.size?`<button class="chip" data-act="catclear">전체 보기</button>`:""}</div>
    <div class="cards">${list.length?list.map(p=>postCard(p)).join(""):emptyHTML(total)}</div>
   </section>
-  <img class="crowd" src="crowd-cut.png" alt="">`;
+  <div class="trio trio-sm"><img class="o o1" src="oct-blue.png" alt=""><img class="o o2" src="oct-yellow.png" alt=""><img class="o o3" src="oct-pink.png" alt=""></div>`;
   st.justLiked=null;
 }
 function emptyHTML(total){
@@ -579,7 +590,7 @@ function renderMy(){
    ${body}
    <div style="display:flex;justify-content:center;padding-block:4px 30px"><button class="linkish" data-act="logout">닉네임 바꾸기</button></div>
   </div>
-  <img class="crowd" src="crowd-cut.png" alt="">`;
+  <div class="trio trio-sm"><img class="o o1" src="oct-blue.png" alt=""><img class="o o2" src="oct-yellow.png" alt=""><img class="o o3" src="oct-pink.png" alt=""></div>`;
   st.justLiked=null;
 }
 
