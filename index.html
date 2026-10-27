@@ -7,7 +7,7 @@
 <link rel="icon" href="woogle-logo.png">
 <link rel="apple-touch-icon" href="woogle-logo.png">
 <title>우글우글</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap">
 <style>
 [hidden]{display:none!important}
 img{max-width:100%}
@@ -454,6 +454,14 @@ body{background:#E4DCC8}
 :root{--font:"Jua","Noto Sans KR","Apple SD Gothic Neo",sans-serif;--serif:"Jua","Noto Sans KR",sans-serif}
 body,button,input,textarea,select{font-family:var(--font)!important;font-synthesis:none}
 body{letter-spacing:0}
+
+/* 우글우글 손글씨 느낌 통일 (개구체 굵게) */
+:root{--font:"Gaegu","Jua","Noto Sans KR",sans-serif;--serif:"Gaegu","Noto Sans KR",sans-serif}
+body,button,input,textarea,select,h1,h2,h3,p,span,b,small,label,td,th{font-family:"Gaegu","Noto Sans KR",sans-serif!important;font-weight:700!important;font-synthesis:none}
+body{font-size:21px}
+.card h3{font-size:27px}.body{font-size:21px}.meta{font-size:18px}
+.tab{font-size:21px}.cta{font-size:24px}.btn{font-size:22px}.chip,.seg button{font-size:18px}
+.field,.cmt-form input{font-size:21px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
