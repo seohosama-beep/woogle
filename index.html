@@ -299,6 +299,87 @@ body::before{background:var(--sky)}
 .cards{padding-bottom:12px}
 .empty-logo{display:block;width:72px;height:auto;margin:0 auto 10px}
 .hero{position:relative}
+
+/* ===== 가을 테마 (심플) ===== */
+:root{--cream:#FBF3E6;--paper:#FFFDF8;--maple:#D2602A;--maple-d:#A9461C;--mustard:#E2A33A;--brick:#A94435;--ink:#3A281B;--ink-soft:#7A6452;--line:#EEDFC9;--orange:#D2602A;--sky:#FBF3E6}
+body{background:#F3E6D2;color:var(--ink)}
+body::before{background:var(--cream)}
+.app,.app.region-guri,.app.region-nam,.app.region-jin,.app.region-home{background:var(--cream);--bg:var(--cream);--on-bg:var(--ink);color:var(--ink);box-shadow:0 0 40px rgba(58,40,27,.08)}
+.app.region-guri{--strong:#D2602A}.app.region-nam{--strong:#C98A1E}.app.region-jin{--strong:#A94435}.app.region-home{--strong:#D2602A}
+.app::before{display:none!important}
+.top{background:rgba(251,243,230,.96);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid var(--line)}
+.brand img{height:46px}
+.bell{border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.me{background:var(--ink);color:#FFFDF8}
+.tab,.region-nam .tab,.region-jin .tab{background:var(--paper);border:1.5px solid var(--line);color:var(--ink);box-shadow:none}
+.tab .dotc{display:none}
+.tab[aria-selected="true"]{box-shadow:none;border-color:transparent;color:#FFFDF8}
+.region-guri .tab[aria-selected="true"]{background:#D2602A;color:#FFFDF8}
+.region-nam .tab[aria-selected="true"]{background:#E2A33A;color:var(--ink)}
+.region-jin .tab[aria-selected="true"]{background:#A94435;color:#FFFDF8}
+.hero{padding-block:18px 14px}
+.hero p{background:none;padding:0;color:var(--ink-soft)}
+.cta{background:var(--maple);color:#FFFDF8;border:0;box-shadow:0 3px 0 var(--maple-d)}
+.cta:active{box-shadow:0 1px 0 var(--maple-d)}
+.cta svg{color:#FFE2B8}
+.list-head h2{background:none;padding:0}
+.seg,.region-nam .seg,.region-jin .seg{background:#F1E3CE}
+.seg button{color:var(--ink-soft)}
+.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(58,40,27,.12)}
+.chip{background:var(--paper);border:1.5px solid var(--line);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#FFFDF8}
+.card{background:var(--paper);border:1px solid var(--line);box-shadow:0 1px 3px rgba(58,40,27,.06)}
+.card-foot{border-top:1px solid var(--line)}
+.badge{background:#F5E8D4;color:var(--ink)}
+.badge.rg-guri{background:#D2602A;color:#FFFDF8}.badge.rg-nam{background:#E2A33A;color:var(--ink)}.badge.rg-jin{background:#A94435;color:#FFFDF8}
+.badge.ex{background:var(--ink-soft);color:#FFFDF8}
+.cmt-btn{border:1.5px solid var(--line);background:var(--paper)}
+.heart.on path{fill:var(--maple)}
+.with b{color:var(--maple)}
+.btn{background:var(--maple);border:0;box-shadow:0 3px 0 var(--maple-d);color:#FFFDF8}
+.btn:active{box-shadow:0 1px 0 var(--maple-d)}
+.field{border:1.5px solid #DCC8AE;border-radius:14px;background:var(--paper)}
+.field:focus{border-color:var(--maple);box-shadow:0 0 0 3px rgba(210,96,42,.2)}
+.empty{background:var(--paper);border:1px dashed #DCC8AE}
+.back,.linkish{background:var(--paper);border:1.5px solid var(--line);color:var(--ink)}
+.mtabs button{background:var(--paper);border:1.5px solid var(--line);color:var(--ink)}
+.mtabs button[aria-selected="true"]{background:var(--maple);border-color:var(--maple);color:#FFFDF8}
+.dseg{background:#F1E3CE}
+.dseg button{color:var(--ink-soft)}
+.dseg button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.profile{background:var(--paper);border:1px solid var(--line);box-shadow:none}
+.profile .name .adm,.me .adm{background:var(--maple)}
+.pstats div,.kpi{background:#F5E8D4}
+.panel{background:var(--paper);border:1px solid var(--line)}
+.kpi.k1{background:#D2602A;color:#FFFDF8}.kpi.k1 span{color:#FFE9D6}
+.kpi.k2{background:#E2A33A}
+.kpi.k3{background:#A94435;color:#FFFDF8}.kpi.k3 span{color:#F6DCD5}
+.bar-track{background:#F1E3CE}.bar-fill{background:var(--maple)}
+.restore{background:#E2A33A;border:0;color:var(--ink)}
+.rg-pick button{border:1.5px solid #DCC8AE}
+.rg-pick button[aria-pressed="true"].g{background:#D2602A;color:#FFFDF8;border-color:#D2602A}
+.rg-pick button[aria-pressed="true"].n{background:#E2A33A;border-color:#E2A33A}
+.rg-pick button[aria-pressed="true"].j{background:#A94435;color:#FFFDF8;border-color:#A94435}
+.cat-pick button{border:1.5px solid #DCC8AE}
+.cat-pick button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+.preview{background:#F5E8D4}
+.sheet{background:var(--paper)}
+.cmt-form{background:var(--paper)}
+.cmt-form input{border:1.5px solid #DCC8AE}
+.cmt-form button{background:var(--maple)}
+.x{border:1.5px solid var(--line);background:var(--paper)}
+.crowd{max-width:440px;margin:6px auto 0}
+/* 첫 화면 */
+.login{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:12px!important;padding:44px 0 0!important;background:var(--cream)!important;overflow:hidden}
+.lg-title{margin:0;line-height:0}
+.lg-logo{width:min(56%,220px);height:auto;display:block;margin:0 auto}
+.lg-sub{margin:0;color:var(--ink-soft);font-size:17px;font-weight:600;letter-spacing:.3px}
+.lg-form{width:min(86%,370px);display:flex;flex-direction:column;gap:10px!important;background:var(--paper)!important;border:1px solid var(--line);border-radius:20px;padding:18px!important;box-shadow:0 8px 20px rgba(58,40,27,.08)!important;margin-top:6px;position:relative;z-index:1}
+.lg-label{font-size:18px;font-weight:700;color:var(--ink)}
+.lg-form .field{text-align:center;font-size:20px}
+.lg-form .btn{width:100%}
+.lg-crowd{display:block;width:100%;max-width:440px;margin-top:auto;position:relative;z-index:1}
+.leaf{position:absolute;pointer-events:none;opacity:.9}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -414,7 +495,7 @@ function render(){
 
 function headerHTML(){
   const n=notiList().filter(x=>x.isNew).length;
-  return `<header class="top gut"><h1 class="brand"><button data-act="home" aria-label="우글우글 처음으로"><img src="woogle-logo.png" alt="우글우글"></button></h1>
+  return `<header class="top gut"><h1 class="brand"><button data-act="home" aria-label="우글우글 처음으로"><img src="woogle-logo-bold.png" alt="우글우글"></button></h1>
   <div class="top-right"><button class="bell" data-act="noti" aria-label="알림 ${n}개">${I.bell}${n?`<span class="dot">${n>99?"99+":n}</span>`:""}</button>
   <button class="me" data-act="my" aria-label="마이페이지">${esc(st.nick)}${isAdmin()?'<span class="adm">관리자</span>':""}</button></div></header>
   ${bannerHTML()}`;
@@ -424,18 +505,16 @@ function bannerHTML(){return ""}
 function renderLogin(){
   setTheme("region-home login-mode");
   $("#view").innerHTML=`<div class="login">
-   <h1 class="logo">우글우글</h1>
-   <img class="lg-top" src="login-top-v3.webp" alt="경기 8방면 연찬 육성 프로젝트 우글우글, 9월~11월 15일 체험담 대회">
-   <div class="lg-mid gut">
-    <div class="start-wrap" id="start-wrap"><button class="btn start-btn" type="button" data-act="startlogin">시작하기</button></div>
-    <form id="nick-form" novalidate hidden>
-     <label for="nick-in">닉네임을 정해 주세요</label>
-     <input class="field" id="nick-in" maxlength="${NICK_MAX}" autocomplete="off" placeholder="예: 진접동 햇살" value="${esc(st.nick)}">
-     <p class="err" id="nick-err"></p>
-     <button class="btn" id="nick-go" type="submit">들어가기</button>
-    </form>
-   </div>
-   <img class="lg-bottom" src="login-bottom.webp" alt="">
+   <svg class="leaf" style="left:7%;top:9%;width:30px;transform:rotate(-25deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#D2602A"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="right:9%;top:15%;width:24px;transform:rotate(35deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#E2A33A"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="left:12%;top:44%;width:20px;transform:rotate(60deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#A94435"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg><svg class="leaf" style="right:7%;top:50%;width:28px;transform:rotate(-50deg)" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c5 3 8 8 6 14-2 4-6 5-6 5s-4-1-6-5C4 10 7 5 12 2z" fill="#C98A1E"/><path d="M12 6v16" stroke="#7A3A16" stroke-width="1.2" fill="none"/></svg>
+   <h1 class="lg-title"><img class="lg-logo" src="woogle-logo-bold.png" alt="우글우글"></h1>
+   <p class="lg-sub">경기 8방면 연찬 육성 프로젝트</p>
+   <form id="nick-form" class="lg-form" novalidate>
+    <label for="nick-in" class="lg-label">닉네임</label>
+    <input class="field" id="nick-in" maxlength="${NICK_MAX}" autocomplete="off" placeholder="닉네임을 입력하세요" value="${esc(st.nick)}">
+    <p class="err" id="nick-err"></p>
+    <button class="btn" id="nick-go" type="submit">시작하기</button>
+   </form>
+   <img class="lg-crowd" src="crowd-cut.png" alt="">
   </div>`;
 }
 
@@ -472,12 +551,12 @@ function renderMain(){
    <div class="filters" role="group" aria-label="고민 분류">${CATS.map(c=>`<button class="chip" data-act="cat" data-c="${esc(c)}" aria-pressed="${st.cats.has(c)}">${esc(c)}</button>`).join("")}${st.cats.size?`<button class="chip" data-act="catclear">전체 보기</button>`:""}</div>
    <div class="cards">${list.length?list.map(p=>postCard(p)).join(""):emptyHTML(total)}</div>
   </section>
-  <img class="crowd" src="crowd.webp" alt="">`;
+  <img class="crowd" src="crowd-cut.png" alt="">`;
   st.justLiked=null;
 }
 function emptyHTML(total){
-  if(total)return `<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>고른 분류의 기원문이 없어요</strong>다른 분류를 골라 보거나 전체 보기를 눌러 주세요.</div>`;
-  return `<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>아직 ${RG[st.region].n}에 올라온 기원문이 없어요</strong>위의 ‘나의 기원문 공유하기’로 첫 기원을 남겨 주세요.</div>`;
+  if(total)return `<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>고른 분류의 기원문이 없어요</strong>다른 분류를 골라 보거나 전체 보기를 눌러 주세요.</div>`;
+  return `<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>아직 ${RG[st.region].n}에 올라온 기원문이 없어요</strong>위의 ‘나의 기원문 공유하기’로 첫 기원을 남겨 주세요.</div>`;
 }
 
 function renderMy(){
@@ -487,8 +566,8 @@ function renderMy(){
   if(st.mtab==="dash"&&!isAdmin())st.mtab="mine";
   const reg=u&&u.region?RG[u.region]:null;
   let body="";
-  if(st.mtab==="mine")body=mineP.length?`<div class="cards">${mineP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>아직 쓴 기원문이 없어요</strong>지역 탭에서 첫 기원문을 남겨 보세요.</div>`;
-  else if(st.mtab==="liked")body=likedP.length?`<div class="cards">${likedP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>함께 기원한 글이 아직 없어요</strong>마음이 가는 기원문에 하트를 눌러 보세요.</div>`;
+  if(st.mtab==="mine")body=mineP.length?`<div class="cards">${mineP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>아직 쓴 기원문이 없어요</strong>지역 탭에서 첫 기원문을 남겨 보세요.</div>`;
+  else if(st.mtab==="liked")body=likedP.length?`<div class="cards">${likedP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo-bold.png" alt=""><strong>함께 기원한 글이 아직 없어요</strong>마음이 가는 기원문에 하트를 눌러 보세요.</div>`;
   else body=dashHTML();
   $("#view").innerHTML=`${headerHTML()}
   <div class="gut"><button class="back" data-act="home">← 기원 이야기로</button>
@@ -500,7 +579,7 @@ function renderMy(){
    ${body}
    <div style="display:flex;justify-content:center;padding-block:4px 30px"><button class="linkish" data-act="logout">닉네임 바꾸기</button></div>
   </div>
-  <img class="crowd" src="crowd.webp" alt="">`;
+  <img class="crowd" src="crowd-cut.png" alt="">`;
   st.justLiked=null;
 }
 
