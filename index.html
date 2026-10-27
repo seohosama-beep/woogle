@@ -41,7 +41,7 @@ button{cursor:pointer}
 /* 헤더 */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px 10px;transition:background .25s}
 .brand{margin:0;line-height:0}
-.brand img{height:52px;width:auto;display:block}
+.brand img{height:58px;width:auto;display:block}
 .brand button{all:unset;cursor:pointer}
 .top-right{display:flex;align-items:center;gap:8px;min-width:0}
 .bell{position:relative;width:40px;height:40px;border-radius:50%;border:2px solid currentColor;background:transparent;display:grid;place-items:center;flex:none}
@@ -287,12 +287,18 @@ body::before{background:var(--sky)}
 /* 첫 화면: 포스터 위쪽(제목·리본) → 시작하기 → 포스터 아래쪽(캐릭터) */
 .login-mode::before{display:none}
 .login{padding:0!important;gap:0!important;justify-content:center;min-height:100vh;min-height:100dvh;overflow:hidden;background:linear-gradient(var(--sky) 50%,#335942 50%)}
-.lg-top{display:block;width:88%;max-width:400px;margin:0 auto}
+.lg-top{display:block;width:98%;max-width:430px;margin:0 auto}
 .lg-mid{display:flex;flex-direction:column;align-items:center;padding-block:2px 4px;background:var(--sky)}
 .lg-mid form{width:100%;box-sizing:border-box}
 .start-wrap{position:static!important}
 .start-btn{font-size:21px!important;padding:11px 40px!important;min-width:0!important}
 .lg-bottom{display:block;width:100%;margin-top:-2px}
+
+/* 우글우글 캐릭터·로고 곳곳에 */
+.crowd{display:block;width:100%;margin-top:8px}
+.cards{padding-bottom:12px}
+.empty-logo{display:block;width:72px;height:auto;margin:0 auto 10px}
+.hero{position:relative}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -419,13 +425,12 @@ function renderLogin(){
   setTheme("region-home login-mode");
   $("#view").innerHTML=`<div class="login">
    <h1 class="logo">우글우글</h1>
-   <img class="lg-top" src="login-top-v2.webp" alt="경기 8방면 연찬 육성 프로젝트 우글우글, 9월~11월 15일 체험담 대회">
+   <img class="lg-top" src="login-top-v3.webp" alt="경기 8방면 연찬 육성 프로젝트 우글우글, 9월~11월 15일 체험담 대회">
    <div class="lg-mid gut">
     <div class="start-wrap" id="start-wrap"><button class="btn start-btn" type="button" data-act="startlogin">시작하기</button></div>
     <form id="nick-form" novalidate hidden>
      <label for="nick-in">닉네임을 정해 주세요</label>
      <input class="field" id="nick-in" maxlength="${NICK_MAX}" autocomplete="off" placeholder="예: 진접동 햇살" value="${esc(st.nick)}">
-     <p class="hint">2~${NICK_MAX}자. 이 닉네임으로 기원문과 댓글이 남아요.</p>
      <p class="err" id="nick-err"></p>
      <button class="btn" id="nick-go" type="submit">들어가기</button>
     </form>
@@ -466,12 +471,13 @@ function renderMain(){
     <div class="seg" role="group" aria-label="정렬"><button data-act="sort" data-s="new" aria-pressed="${st.sort==="new"}">최신순</button><button data-act="sort" data-s="like" aria-pressed="${st.sort==="like"}">기원 많은순</button></div></div>
    <div class="filters" role="group" aria-label="고민 분류">${CATS.map(c=>`<button class="chip" data-act="cat" data-c="${esc(c)}" aria-pressed="${st.cats.has(c)}">${esc(c)}</button>`).join("")}${st.cats.size?`<button class="chip" data-act="catclear">전체 보기</button>`:""}</div>
    <div class="cards">${list.length?list.map(p=>postCard(p)).join(""):emptyHTML(total)}</div>
-  </section>`;
+  </section>
+  <img class="crowd" src="crowd.webp" alt="">`;
   st.justLiked=null;
 }
 function emptyHTML(total){
-  if(total)return `<div class="empty"><strong>고른 분류의 기원문이 없어요</strong>다른 분류를 골라 보거나 전체 보기를 눌러 주세요.</div>`;
-  return `<div class="empty"><strong>아직 ${RG[st.region].n}에 올라온 기원문이 없어요</strong>위의 ‘나의 기원문 공유하기’로 첫 기원을 남겨 주세요.</div>`;
+  if(total)return `<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>고른 분류의 기원문이 없어요</strong>다른 분류를 골라 보거나 전체 보기를 눌러 주세요.</div>`;
+  return `<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>아직 ${RG[st.region].n}에 올라온 기원문이 없어요</strong>위의 ‘나의 기원문 공유하기’로 첫 기원을 남겨 주세요.</div>`;
 }
 
 function renderMy(){
@@ -481,8 +487,8 @@ function renderMy(){
   if(st.mtab==="dash"&&!isAdmin())st.mtab="mine";
   const reg=u&&u.region?RG[u.region]:null;
   let body="";
-  if(st.mtab==="mine")body=mineP.length?`<div class="cards">${mineP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><strong>아직 쓴 기원문이 없어요</strong>지역 탭에서 첫 기원문을 남겨 보세요.</div>`;
-  else if(st.mtab==="liked")body=likedP.length?`<div class="cards">${likedP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><strong>함께 기원한 글이 아직 없어요</strong>마음이 가는 기원문에 하트를 눌러 보세요.</div>`;
+  if(st.mtab==="mine")body=mineP.length?`<div class="cards">${mineP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>아직 쓴 기원문이 없어요</strong>지역 탭에서 첫 기원문을 남겨 보세요.</div>`;
+  else if(st.mtab==="liked")body=likedP.length?`<div class="cards">${likedP.map(p=>postCard(p,{showRegion:true})).join("")}</div>`:`<div class="empty"><img class="empty-logo" src="woogle-logo.png" alt=""><strong>함께 기원한 글이 아직 없어요</strong>마음이 가는 기원문에 하트를 눌러 보세요.</div>`;
   else body=dashHTML();
   $("#view").innerHTML=`${headerHTML()}
   <div class="gut"><button class="back" data-act="home">← 기원 이야기로</button>
@@ -493,7 +499,8 @@ function renderMy(){
    <div class="mtabs" role="tablist"><button role="tab" data-act="mtab" data-t="mine" aria-selected="${st.mtab==="mine"}">내가 쓴 기원문</button><button role="tab" data-act="mtab" data-t="liked" aria-selected="${st.mtab==="liked"}">함께 기원한 기원문</button>${isAdmin()?`<button role="tab" data-act="mtab" data-t="dash" aria-selected="${st.mtab==="dash"}">대시보드</button>`:""}</div>
    ${body}
    <div style="display:flex;justify-content:center;padding-block:4px 30px"><button class="linkish" data-act="logout">닉네임 바꾸기</button></div>
-  </div>`;
+  </div>
+  <img class="crowd" src="crowd.webp" alt="">`;
   st.justLiked=null;
 }
 
