@@ -144,13 +144,6 @@ def types(name,title,items,ending,seed,key):
     sc.append((e,[('dead',TOFU,560,260,700)],2.4))
     render(name,sc,seed,key)
 job=sys.argv[1]
-if job.endswith('.json'):
-    import json; sp=json.load(open(job)); k=sp.pop('kind')
-    if 'lc' in sp: sp['lc']=tuple(sp['lc']); sp['rc']=tuple(sp['rc'])
-    if k=='meme': sp['frames']=[(a,b,c,tuple(d),e) for a,b,c,d,e in sp['frames']]
-    if k=='types': sp['items']=[tuple(x) for x in sp['items']]
-    if k=='vs': sp['beats']=[tuple(x) for x in sp['beats']]
-    {'vs':vs,'types':types,'meme':meme}[k](**sp); sys.exit(0)
 if job=='4': types('reel4','회식 자리\n유형별 특징',[
   ('막내형','"고기 제가 굽겠습니다!!"\n(본인은 한 점도 못 먹음)','shock'),('부장님형','"자, 마지막 한 잔만~"\n(이게 다섯 번째)','smug'),
   ('총무형','"N빵 하면 1인당\n37,250원입니다"','happy'),('유령형','"화장실 좀…"\n(그 뒤로 아무도 못 봄)','derp')],'당신은 어떤 유형? 댓글로 ㄱㄱ',4,2)
@@ -215,3 +208,11 @@ elif job=='14': meme('reel14',[
   ('위','"…조금만 먹으면 괜찮아"','derp',(255,236,200),2.0),
   ('코','"치킨. 치킨. 치킨."','shock',(255,214,214),2.0),
   ('결과','1인 1닭 + 콜라 1.25L','happy',(30,30,36),2.6)],14,7)
+
+if job.endswith('.json'):
+    import json; sp=json.load(open(job)); k=sp.pop('kind')
+    if 'lc' in sp: sp['lc']=tuple(sp['lc']); sp['rc']=tuple(sp['rc'])
+    if k=='meme': sp['frames']=[(a,b,c,tuple(d),e) for a,b,c,d,e in sp['frames']]
+    if k=='types': sp['items']=[tuple(x) for x in sp['items']]
+    if k=='vs': sp['beats']=[tuple(x) for x in sp['beats']]
+    {'vs':vs,'types':types,'meme':meme}[k](**sp); sys.exit(0)
