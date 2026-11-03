@@ -5,3 +5,9 @@
 - mood: happy / shock / smug / dead / derp / angry
 - 예시: example_vs.json
 - 사용한 주제는 topics_used.md 에 한 줄씩 기록 (중복 금지)
+
+## K-서울 가이드 (2026-11-03~ 현재 컨셉)
+- 실행: `python3 kguide.py spec.json` → `<name>.mp4` (1080x1920 고화질, 자체 그래픽·자체 음악)
+- spec: kguide_example.json 참고. title{en,ko,ja,zh}, items 3~5개 {icon, ko, roman, en, ja, zh}
+- icon: egg, potato, ricecake, pancake, skewer, hotel, subway, shop, camera, coffee, map, star
+- 사실 정보만(가격·영업시간 등 바뀌는 숫자는 넣지 말 것), 다른 사람 영상·사진·음악 사용 금지

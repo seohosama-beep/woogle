@@ -1,0 +1,8 @@
+{"name":"kg_myeongdong_food","badge":"SEOUL GUIDE","title_icon":"map","seed":41,"key":2,
+ "title":{"en":"MYEONGDONG STREET FOOD TOP 5","ko":"명동 길거리 음식 TOP 5","ja":"明洞の屋台グルメ TOP5","zh":"明洞街头美食 TOP5"},
+ "items":[
+  {"icon":"skewer","ko":"닭꼬치","roman":"Dak-kkochi","en":"Grilled chicken skewer with sweet & spicy glaze","ja":"甘辛だれの焼き鳥串","zh":"甜辣酱烤鸡肉串"},
+  {"icon":"pancake","ko":"호떡","roman":"Hotteok","en":"Sweet pancake filled with brown sugar & nuts","ja":"黒糖とナッツ入りの甘いおやき","zh":"红糖坚果馅的甜饼"},
+  {"icon":"ricecake","ko":"떡볶이","roman":"Tteokbokki","en":"Chewy rice cakes in sweet chili sauce","ja":"甘辛ソースのもちもち餅","zh":"甜辣酱炒年糕"},
+  {"icon":"potato","ko":"회오리감자","roman":"Hoeori-gamja","en":"Tornado potato, spiral-cut & deep-fried","ja":"らせん切りのトルネードポテト","zh":"螺旋切片的龙卷风土豆"},
+  {"icon":"egg","ko":"계란빵","roman":"Gyeran-ppang","en":"Fluffy bread baked with a whole egg on top","ja":"卵がまるごと乗ったふわふわパン","zh":"整颗鸡蛋烤在上面的松软面包"}]}
