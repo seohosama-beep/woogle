@@ -79,6 +79,7 @@ def frame_title(sp):
         x=random.randint(0,W*S); y=random.randint(0,H*S); r=random.randint(2,6)*S; d.ellipse([x-r,y-r,x+r,y+r],fill=(60,70,110))
     d.rounded_rectangle([140*S,330*S,940*S,430*S],radius=50*S,fill=GOLD)
     ctext(d,sp.get('badge','SEOUL GUIDE'),345,58,NAVY,'en')
+    if sp.get('hook'): ctext(d,sp['hook'],200,70,PINK,'en')
     y=ctext(d,sp['title']['en'],560,92,WHITE,'en')
     y=ctext(d,sp['title']['ko'],y+40,64,GOLD,'ko')
     y=ctext(d,sp['title']['ja'],y+30,54,WHITE,'ja',False)
@@ -109,13 +110,14 @@ def frame_outro(sp):
     return im.resize((W,H),Image.LANCZOS)
 def render(sp):
     name=sp['name']; out='fr_'+name; shutil.rmtree(out,ignore_errors=True); os.makedirs(out); fi=0; cuts=[]
-    scenes=[(frame_title(sp),2.2)]+[(frame_item(sp,i,it),3.2) for i,it in enumerate(sp['items'])]+[(frame_outro(sp),2.4)]
+    scenes=[(frame_title(sp),1.4)]+[(frame_item(sp,i,it),2.3) for i,it in enumerate(sp['items'])]+[(frame_outro(sp),1.4)]
     for img,sec in scenes:
         cuts.append(fi/FPS); n=int(sec*FPS)
         for t in range(n):
-            k=1+0.04*min(1,t/n)  # slow zoom
-            if t<6: k=1.08-0.01*t
+            k=1+0.05*min(1,t/n)  # zoom
             w,h=int(W*k),int(H*k); fr=img.resize((w,h),Image.BILINEAR).crop(((w-W)//2,(h-H)//2,(w-W)//2+W,(h-H)//2+H))
+            if t<7:  # quick slide-in from right
+                off=int(W*(1-t/7)**2); bg=Image.new('RGB',(W,H),NAVY); bg.paste(fr,(off,0)); fr=bg
             fr.save(f'{out}/{fi:05d}.jpg',quality=92); fi+=1
     T=fi/FPS; a=music2.music(T,sp.get('seed',1),sp.get('key',0))
     for c in cuts[1:]:

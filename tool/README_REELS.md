@@ -8,6 +8,6 @@
 
 ## K-서울 가이드 (2026-11-03~ 현재 컨셉)
 - 실행: `python3 kguide.py spec.json` → `<name>.mp4` (1080x1920 고화질, 자체 그래픽·자체 음악)
-- spec: kguide_example.json 참고. title{en,ko,ja,zh}, items 3~5개 {icon, ko, roman, en, ja, zh}
+- spec: kguide_example.json 참고. 선택 "hook": 제목 화면 맨 위 영어 한 줄 훅(예: "Don't visit Seoul before knowing this!"). items는 4개 권장(영상 약 12초). title{en,ko,ja,zh}, items 3~5개 {icon, ko, roman, en, ja, zh}
 - icon: egg, potato, ricecake, pancake, skewer, hotel, subway, shop, camera, coffee, map, star
 - 사실 정보만(가격·영업시간 등 바뀌는 숫자는 넣지 말 것), 다른 사람 영상·사진·음악 사용 금지
