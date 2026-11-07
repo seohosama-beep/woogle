@@ -79,7 +79,7 @@ def frame_title(sp):
         x=random.randint(0,W*S); y=random.randint(0,H*S); r=random.randint(2,6)*S; d.ellipse([x-r,y-r,x+r,y+r],fill=(60,70,110))
     d.rounded_rectangle([140*S,330*S,940*S,430*S],radius=50*S,fill=GOLD)
     ctext(d,sp.get('badge','SEOUL GUIDE'),345,58,NAVY,'en')
-    if sp.get('hook'): ctext(d,sp['hook'],200,70,PINK,'en')
+    if sp.get('hook'): ctext(d,sp['hook'],140,58,PINK,'en')
     y=ctext(d,sp['title']['en'],560,92,WHITE,'en')
     y=ctext(d,sp['title']['ko'],y+40,64,GOLD,'ko')
     y=ctext(d,sp['title']['ja'],y+30,54,WHITE,'ja',False)
