@@ -1,0 +1,11 @@
+{"name":"hf-20261118-07","active":true,"badge":"SEOUL HOTEL TIPS","title_icon":"hotel","seed":1807,"key":2,
+"hook":"POV: your first night in a Seoul hotel",
+"item_label":"First night in a Seoul hotel",
+"title":{"en":"4 things for night one","ko":"서울 호텔 첫날밤 알아둘 4가지","ja":"ソウルのホテル初日に知っておくこと4つ","zh":"首尔酒店第一晚须知4件事"},
+"items":[
+{"icon":"hotel","ko":"체크인엔 여권!","roman":"yeogwon = passport","en":"Keep your passport handy at check-in","ja":"チェックインはパスポートを準備","zh":"办理入住请准备好护照"},
+{"icon":"star","ko":"난방 · 냉방","roman":"nanbang = heat · naengbang = cool","en":"Read the Korean on the room panel","ja":"パネルの「暖房・冷房」を確認","zh":"看懂面板上的“暖气·冷气”"},
+{"icon":"shop","ko":"배달은 어디서 받아요?","roman":"baedal = food delivery","en":"Ask the desk where to get deliveries","ja":"デリバリーの受け取り場所をフロントで確認","zh":"外卖在哪儿取？先问前台"},
+{"icon":"map","ko":"택시 불러 주세요","roman":"taeksi bulleo juseyo","en":"\"Please call a taxi\" at the desk","ja":"「タクシーを呼んでください」","zh":"“请帮我叫出租车”"}],
+"cta_en":"Which tip helps you most?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
