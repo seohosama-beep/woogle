@@ -69,6 +69,26 @@ def icon(d,kind,cx,cy,r,col):
         d.polygon([(cx,cy+r*.6),(cx-r*.38,cy),(cx+r*.38,cy)],fill=PINK,outline=ink)
         d.ellipse([cx-r*.4,cy-r*.55,cx+r*.4,cy+r*.2],fill=PINK,outline=ink,width=lw)
         d.ellipse([cx-r*.14,cy-r*.3,cx+r*.14,cy-r*.02],fill=WHITE)
+    elif k=='meat':
+        d.ellipse([cx-r*.65,cy-r*.45,cx+r*.65,cy+r*.45],fill=(70,70,80),outline=ink,width=lw)
+        for i in range(3):
+            y=cy-r*.25+i*r*.25
+            d.rounded_rectangle([cx-r*.45,y-r*.08,cx+r*.45,y+r*.08],radius=r*.05,fill=(240,150,140),outline=ink,width=int(3*s))
+            d.line([cx-r*.4,y,cx+r*.4,y],fill=WHITE,width=int(4*s))
+    elif k=='chicken':
+        d.line([cx+r*.1,cy+r*.1,cx+r*.5,cy+r*.5],fill=(250,240,220),width=int(14*s))
+        d.ellipse([cx-r*.55,cy-r*.55,cx+r*.25,cy+r*.25],fill=(215,130,50),outline=ink,width=lw)
+        d.ellipse([cx+r*.4,cy+r*.4,cx+r*.62,cy+r*.62],fill=(250,240,220),outline=ink,width=int(3*s))
+    elif k=='noodle':
+        d.chord([cx-r*.65,cy-r*.3,cx+r*.65,cy+r*.6],0,180,fill=WHITE,outline=ink,width=lw)
+        d.line([cx-r*.65,cy+r*.15,cx+r*.65,cy+r*.15],fill=ink,width=lw)
+        for x in (-.3,-.1,.1,.3): d.arc([cx+x*r-r*.12,cy-r*.35,cx+x*r+r*.12,cy+r*.15],90,270,fill=(240,220,160),width=int(5*s))
+        d.line([cx+r*.2,cy-r*.65,cx-r*.05,cy+r*.05],fill=(150,110,70),width=lw)
+    elif k=='pot':
+        d.rounded_rectangle([cx-r*.6,cy-r*.2,cx+r*.6,cy+r*.5],radius=r*.15,fill=(200,200,210),outline=ink,width=lw)
+        d.ellipse([cx-r*.6,cy-r*.35,cx+r*.6,cy-r*.05],fill=(250,230,180),outline=ink,width=lw)
+        for x in (-.75,.75): d.ellipse([cx+x*r-r*.1,cy-r*.05,cx+x*r+r*.1,cy+r*.15],fill=(200,200,210),outline=ink,width=int(3*s))
+        for x in (-.2,.2): d.arc([cx+x*r-r*.1,cy-r*.75,cx+x*r+r*.1,cy-r*.4],60,300,fill=WHITE,width=int(4*s))
     else:
         pts=[(cx+(r*.6 if i%2==0 else r*.25)*math.cos(-math.pi/2+i*math.pi/5),cy+(r*.6 if i%2==0 else r*.25)*math.sin(-math.pi/2+i*math.pi/5)) for i in range(10)]
         d.polygon(pts,fill=GOLD,outline=ink)
@@ -108,16 +128,65 @@ def frame_outro(sp):
     d.rounded_rectangle([200*S,(y+80)*S,880*S,(y+200)*S],radius=60*S,fill=NAVY)
     ctext(d,'@kangdalcom',y+100,64,WHITE,'en')
     return im.resize((W,H),Image.LANCZOS)
+def frame_hook(sp):
+    # active mode: huge hook visible from frame 0, title below
+    im=Image.new('RGB',(W*S,H*S),NAVY); d=ImageDraw.Draw(im)
+    d.rectangle([0,0,W*S,760*S],fill=PINK)
+    ctext(d,sp['hook'],150,104,WHITE,'en',maxw=980)
+    d.rounded_rectangle([200*S,800*S,880*S,890*S],radius=45*S,fill=GOLD)
+    ctext(d,sp.get('badge','SEOUL GUIDE'),812,52,NAVY,'en')
+    y=ctext(d,sp['title']['en'],950,70,WHITE,'en')
+    y=ctext(d,sp['title']['ko'],y+20,56,GOLD,'ko')
+    y=ctext(d,sp['title']['ja']+'  /  '+sp['title']['zh'],y+16,42,(220,225,255),'ja',False)
+    icon(d,sp.get('title_icon','star'),540,1620,150,GOLD)
+    return im.resize((W,H),Image.LANCZOS)
+def frame_item_active(sp,i,it):
+    col=PALS[i%len(PALS)]
+    im=Image.new('RGB',(W*S,H*S),NAVY); d=ImageDraw.Draw(im)
+    d.rectangle([0,0,W*S,200*S],fill=col)
+    ctext(d,sp.get('item_label',sp['title']['en']),62,50,WHITE,'en',maxw=980)
+    icon(d,it.get('icon','star'),540,500,210,col)
+    # big number badge
+    bx,by,br=210,330,105
+    d.ellipse([(bx-br)*S,(by-br)*S,(bx+br)*S,(by+br)*S],fill=GOLD,outline=WHITE,width=8*S)
+    f=F(130,'en'); n=str(i+1); w=d.textlength(n,font=f)
+    d.text((bx*S-w/2,(by-92)*S),n,font=f,fill=NAVY)
+    y=ctext(d,it['ko'],780,92,WHITE,'ko')
+    if it.get('roman'): y=ctext(d,it['roman'],y,48,GOLD,'en',False)
+    d.line([(160*S,(y+26)*S),(920*S,(y+26)*S)],fill=(70,80,120),width=4*S)
+    y+=60
+    for lang,colr in (('en',WHITE),('ja',(220,225,255)),('zh',(220,225,255))):
+        y=ctext(d,it[lang],y,48,colr,lang,lang=='en')+18
+    return im.resize((W,H),Image.LANCZOS)
+def frame_cta(sp):
+    im=Image.new('RGB',(W*S,H*S),GOLD); d=ImageDraw.Draw(im)
+    nums=', '.join(str(i+1) for i in range(len(sp['items'])-1))+' or '+str(len(sp['items']))
+    y=ctext(d,sp.get('cta_en',f'Which one would you pick?\n{nums}'),430,86,NAVY,'en')
+    # down arrow
+    ax=540; ay=y+40
+    d.polygon([((ax-70)*S,ay*S),((ax+70)*S,ay*S),(ax*S,(ay+90)*S)],fill=PINK)
+    y=ay+130
+    y=ctext(d,sp.get('cta2_en','Save this for your Seoul trip'),y,60,NAVY,'en')
+    y=ctext(d,sp.get('outro_ja','ソウル旅行のために保存してね！'),y+24,48,NAVY,'ja')
+    y=ctext(d,sp.get('outro_zh','收藏起来，首尔旅行用得上！'),y+12,48,NAVY,'zh')
+    d.rounded_rectangle([200*S,(y+60)*S,880*S,(y+180)*S],radius=60*S,fill=NAVY)
+    ctext(d,'@kangdalcom',y+80,64,WHITE,'en')
+    return im.resize((W,H),Image.LANCZOS)
 def render(sp):
     name=sp['name']; out='fr_'+name; shutil.rmtree(out,ignore_errors=True); os.makedirs(out); fi=0; cuts=[]
-    scenes=[(frame_title(sp),1.4)]+[(frame_item(sp,i,it),2.3) for i,it in enumerate(sp['items'])]+[(frame_outro(sp),1.4)]
-    for img,sec in scenes:
+    active=sp.get('active',False)
+    if active:
+        scenes=[(frame_hook(sp),1.5)]+[(frame_item_active(sp,i,it),2.0) for i,it in enumerate(sp['items'])]+[(frame_cta(sp),1.8)]
+    else:
+        scenes=[(frame_title(sp),1.4)]+[(frame_item(sp,i,it),2.3) for i,it in enumerate(sp['items'])]+[(frame_outro(sp),1.4)]
+    for si,(img,sec) in enumerate(scenes):
         cuts.append(fi/FPS); n=int(sec*FPS)
         for t in range(n):
             k=1+0.05*min(1,t/n)  # zoom
             w,h=int(W*k),int(H*k); fr=img.resize((w,h),Image.BILINEAR).crop(((w-W)//2,(h-H)//2,(w-W)//2+W,(h-H)//2+H))
-            if t<7:  # quick slide-in from right
-                off=int(W*(1-t/7)**2); bg=Image.new('RGB',(W,H),NAVY); bg.paste(fr,(off,0)); fr=bg
+            sl=5 if active else 7
+            if t<sl and not (active and si==0):  # quick slide-in from right
+                off=int(W*(1-t/sl)**2); bg=Image.new('RGB',(W,H),NAVY); bg.paste(fr,(off,0)); fr=bg
             fr.save(f'{out}/{fi:05d}.jpg',quality=92); fi+=1
     T=fi/FPS; a=music2.music(T,sp.get('seed',1),sp.get('key',0))
     for c in cuts[1:]:
