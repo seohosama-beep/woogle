@@ -1,0 +1,11 @@
+{"name":"hf-20261118-09","active":true,"badge":"SEOUL FOOD","title_icon":"egg","seed":1809,"key":4,
+"hook":"POV: your first breakfast in Seoul",
+"item_label":"Breakfast like a local",
+"title":{"en":"4 Korean breakfasts to try","ko":"서울 아침밥 4가지","ja":"ソウルの朝ごはん4選","zh":"首尔早餐4选"},
+"items":[
+{"icon":"star","ko":"국밥 한 그릇 주세요","roman":"gukbap = hot rice soup","en":"Warm rice soup, a local morning classic","ja":"クッパ：温かいスープご飯","zh":"汤饭：热乎乎的早餐经典"},
+{"icon":"ricecake","ko":"김밥 한 줄 주세요","roman":"gimbap han jul = one roll","en":"Grab a gimbap roll to go","ja":"キンパ1本テイクアウト","zh":"来一条紫菜包饭带走"},
+{"icon":"egg","ko":"길거리 토스트","roman":"gilgeori toseuteu","en":"Street toast with egg & cabbage","ja":"卵とキャベツの屋台トースト","zh":"鸡蛋卷心菜街头吐司"},
+{"icon":"pancake","ko":"죽 (호박죽 · 전복죽)","roman":"juk = rice porridge","en":"Soft porridge: pumpkin or abalone","ja":"お粥：かぼちゃ・アワビ","zh":"粥：南瓜粥·鲍鱼粥"}],
+"cta_en":"Which one would you pick?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
