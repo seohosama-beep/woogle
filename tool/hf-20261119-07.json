@@ -1,0 +1,11 @@
+{"name":"hf-20261119-07","active":true,"badge":"SEOUL HOTEL TIPS","title_icon":"hotel","seed":1907,"key":3,
+"hook":"Cold night in a Seoul hotel? Say THIS",
+"item_label":"Winter hotel Korean",
+"title":{"en":"4 winter requests for the front desk","ko":"겨울 호텔에서 쓰는 한국어 4","ja":"冬のホテルで使える韓国語4つ","zh":"冬天住酒店必备韩语4句"},
+"items":[
+{"icon":"hotel","ko":"방이 좀 추워요","roman":"bang-i jom chuwoyo","en":"\"My room is a bit cold\"","ja":"「部屋が少し寒いです」","zh":"“房间有点冷”"},
+{"icon":"star","ko":"이불 하나 더 주세요","roman":"ibul hana deo juseyo","en":"\"One more blanket, please\"","ja":"「布団をもう一枚ください」","zh":"“请再给我一床被子”"},
+{"icon":"coffee","ko":"가습기 있어요?","roman":"gaseupgi isseoyo?","en":"\"Do you have a humidifier?\" Winter air is dry","ja":"「加湿器はありますか？」冬は乾燥","zh":"“有加湿器吗？”冬天很干燥"},
+{"icon":"map","ko":"청소 안 해도 돼요","roman":"cheongso an haedo dwaeyo","en":"\"No room cleaning today, thanks\"","ja":"「今日は掃除しなくて大丈夫です」","zh":"“今天不用打扫房间”"}],
+"cta_en":"Which one will you use first?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
