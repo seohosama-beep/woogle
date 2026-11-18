@@ -1,0 +1,11 @@
+{"name":"hf-20261118-15","active":true,"badge":"SEOUL HOTEL TIP","title_icon":"hotel","seed":1815,"key":2,
+"hook":"4 Korean phrases for your Seoul hotel front desk",
+"item_label":"Say this at the front desk",
+"title":{"en":"4 front desk phrases in Korean","ko":"호텔 프런트에서 쓰는 한국어 4","ja":"ホテルのフロントで使える韓国語4","zh":"酒店前台用的韩语4句"},
+"items":[
+{"icon":"hotel","ko":"짐 맡길 수 있어요?","roman":"jim matgil su isseoyo?","en":"Can I leave my luggage here?","ja":"荷物を預けられますか？","zh":"可以寄存行李吗？"},
+{"icon":"star","ko":"와이파이 비번 뭐예요?","roman":"waipai bibeon mwoyeyo?","en":"What's the Wi-Fi password?","ja":"Wi-Fiのパスワードは何ですか？","zh":"Wi-Fi密码是多少？"},
+{"icon":"pancake","ko":"수건 더 주세요","roman":"sugeon deo juseyo","en":"More towels, please","ja":"タオルをもう少しください","zh":"请再给我几条毛巾"},
+{"icon":"shop","ko":"근처에 편의점 있어요?","roman":"geuncheoe pyeonuijeom isseoyo?","en":"Is there a convenience store nearby?","ja":"近くにコンビニはありますか？","zh":"附近有便利店吗？"}],
+"cta_en":"Which phrase will you use first?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
