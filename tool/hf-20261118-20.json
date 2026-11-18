@@ -1,0 +1,11 @@
+{"name":"hf-20261118-20","active":true,"badge":"WHERE TO STAY","title_icon":"map","seed":1820,"key":5,
+"hook":"DON'T book a Seoul hotel before watching this",
+"item_label":"Best area for you",
+"title":{"en":"4 Seoul areas to stay & who they suit","ko":"서울 숙소 동네 4곳, 누구에게 맞을까","ja":"ソウルの宿泊エリア4選","zh":"首尔住宿4大区域"},
+"items":[
+{"icon":"shop","ko":"명동","roman":"Myeongdong · Line 4","en":"First-timers: shopping & street food","ja":"初めての方に：買い物と屋台グルメ","zh":"第一次来：购物和街头小吃"},
+{"icon":"star","ko":"홍대","roman":"Hongik Univ. Stn · Line 2 & AREX","en":"Night owls: busking, cafes, nightlife","ja":"夜型さんに：路上ライブ・カフェ・夜遊び","zh":"夜猫子：街头表演、咖啡馆、夜生活"},
+{"icon":"camera","ko":"종로·인사동","roman":"Anguk Stn · Line 3","en":"History lovers: palaces & hanok streets","ja":"歴史好きに：古宮と韓屋の街並み","zh":"历史迷：古宫和韩屋街"},
+{"icon":"subway","ko":"동대문","roman":"DDP Stn · Lines 2, 4 & 5","en":"Shoppers: DDP & fashion malls","ja":"買い物好きに：DDPとファッションビル","zh":"购物狂：DDP和时装商场"}],
+"cta_en":"Which area would you pick?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
