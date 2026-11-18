@@ -1,0 +1,11 @@
+{"name":"hf-20261118-13","active":true,"badge":"SEOUL FOOD","title_icon":"map","seed":1813,"key":5,
+"hook":"4 Seoul streets named after ONE food",
+"item_label":"Seoul food alleys",
+"title":{"en":"4 food alleys locals love","ko":"한 메뉴로 유명한 서울 골목 4","ja":"一つの料理で有名なソウルの路地4","zh":"首尔一道菜出名的美食街4条"},
+"items":[
+{"icon":"ricecake","ko":"신당동 떡볶이 골목","roman":"Sindang Stn · Lines 2 & 6","en":"Bubbling pot tteokbokki","ja":"新堂洞トッポッキ通り：鍋トッポッキ","zh":"新堂洞炒年糕街：火锅炒年糕"},
+{"icon":"star","ko":"장충동 족발 골목","roman":"Dongguk Univ. Stn · Line 3","en":"Jokbal: braised pork trotters","ja":"奨忠洞チョッパル通り：豚足","zh":"奖忠洞猪蹄街：酱猪蹄"},
+{"icon":"egg","ko":"동대문 닭한마리 골목","roman":"Jongno 5-ga Stn · Line 1","en":"Whole chicken hot pot","ja":"東大門タッカンマリ通り：鶏一羽鍋","zh":"东大门一只鸡胡同：整鸡火锅"},
+{"icon":"skewer","ko":"을지로 노가리 골목","roman":"Euljiro 3-ga Stn · Lines 2 & 3","en":"Dried pollack + beer, street-side","ja":"乙支路ノガリ横丁：干し魚とビール","zh":"乙支路明太鱼干街：鱼干配啤酒"}],
+"cta_en":"Which alley would you hit first?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
