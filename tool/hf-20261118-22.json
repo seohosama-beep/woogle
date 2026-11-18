@@ -1,0 +1,10 @@
+{"name":"hf-20261118-22","active":true,"badge":"SEOUL CAFE","title_icon":"coffee","seed":2218,"key":5,
+"hook":"3 Korean cafe drinks you WON'T find back home",
+"item_label":"Korean cafe drinks",
+"title":{"en":"3 Korean cafe drinks to try","ko":"한국 카페 음료 3가지","ja":"韓国カフェドリンク3選","zh":"韩国咖啡店饮品3款"},
+"items":[
+{"icon":"coffee","ko":"유자차 주세요","roman":"Yuja-cha juseyo","en":"Yuja tea: hot citron & honey","ja":"ゆず茶：はちみつ柚子のお茶","zh":"柚子茶：蜂蜜柚子热饮"},
+{"icon":"potato","ko":"고구마 라떼 주세요","roman":"Goguma latte juseyo","en":"Sweet potato latte: a winter classic","ja":"さつまいもラテ：冬の定番","zh":"红薯拿铁：冬季经典"},
+{"icon":"ricecake","ko":"미숫가루 라떼 주세요","roman":"Misutgaru latte juseyo","en":"Roasted multigrain latte, nutty & sweet","ja":"ミスッカルラテ：穀物ラテ","zh":"谷物拿铁：香浓烤谷物粉"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
