@@ -1,0 +1,11 @@
+{"name":"hf-20261118-11","active":true,"badge":"SKYPARK SPOTLIGHT","title_icon":"hotel","seed":1811,"key":4,
+"hook":"POV: your Seoul hotel is right next to DDP",
+"item_label":"SKYPARK Kingstown Dongdaemun",
+"title":{"en":"4 spots near SKYPARK Kingstown Dongdaemun","ko":"스카이파크 킹스타운 동대문 근처 4곳","ja":"東大門ホテル周辺の4か所","zh":"东大门酒店附近4处"},
+"items":[
+{"icon":"subway","ko":"동역사역","roman":"Dongdaemun History & Culture Park","en":"Nearest subway · Lines 2, 4 & 5","ja":"東大門歴史文化公園駅（2・4・5号線）","zh":"东大门历史文化公园站（2·4·5号线）"},
+{"icon":"camera","ko":"동대문디자인플라자","roman":"DDP · Dongdaemun Design Plaza","en":"Futuristic design landmark & night photos","ja":"近未来デザインの名所、夜景もきれい","zh":"未来感地标，夜景超好拍"},
+{"icon":"star","ko":"흥인지문 (동대문)","roman":"Heunginjimun Gate","en":"Seoul's historic East Gate","ja":"ソウルの歴史ある東の門","zh":"首尔历史悠久的东大门城门"},
+{"icon":"pancake","ko":"광장시장","roman":"Gwangjang Market","en":"Bindaetteok & market food","ja":"ピンデトッなど市場グルメ","zh":"绿豆煎饼等市场美食"}],
+"cta_en":"Which would you visit first?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
