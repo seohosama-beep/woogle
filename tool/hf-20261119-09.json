@@ -1,0 +1,10 @@
+{"name":"hf-20261119-09","active":true,"badge":"SEOUL FOOD","title_icon":"shop","seed":1909,"key":5,
+"hook":"3 foods you MUST eat at Namdaemun Market",
+"item_label":"Namdaemun Market",
+"title":{"en":"Namdaemun Market: 3 must-eats","ko":"남대문시장 꼭 먹을 3가지","ja":"南大門市場で食べたい3つ","zh":"南大门市场必吃3样"},
+"items":[
+{"icon":"pancake","ko":"야채호떡","roman":"yachae hotteok","en":"Veggie hotteok: crispy pancake with glass noodles","ja":"野菜ホットク：春雨入りのサクサク焼き","zh":"蔬菜糖饼：粉丝馅酥脆煎饼"},
+{"icon":"egg","ko":"칼국수 골목","roman":"kalguksu golmok","en":"Kalguksu Alley: hot knife-cut noodle soup","ja":"カルグクス横丁：温かい手打ち麺","zh":"刀削面胡同：热腾腾的手擀面汤"},
+{"icon":"star","ko":"갈치조림 골목","roman":"galchi jorim golmok","en":"Galchi Alley: spicy braised cutlassfish","ja":"タチウオ煮付け横丁：ピリ辛煮魚","zh":"带鱼胡同：辣炖带鱼"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Hoehyeon Stn (Line 4) Exit 5\nSave this for your Seoul trip"}
