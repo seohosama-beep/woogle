@@ -1,0 +1,10 @@
+{"name":"hf-20261119-18","active":true,"badge":"SEOUL FOOD","title_icon":"shop","seed":1918,"key":2,
+"hook":"3 foods you MUST eat at Gwangjang Market",
+"item_label":"Gwangjang Market",
+"title":{"en":"Gwangjang Market: 3 must-eats","ko":"광장시장 꼭 먹을 3가지","ja":"広蔵市場で食べたい3つ","zh":"广藏市场必吃3样"},
+"items":[
+{"icon":"pancake","ko":"빈대떡","roman":"bindaetteok","en":"Bindaetteok: crispy mung bean pancake","ja":"ピンデトック：緑豆のチヂミ","zh":"绿豆煎饼：外酥里嫩"},
+{"icon":"ricecake","ko":"마약김밥","roman":"mayak gimbap","en":"Mayak gimbap: mini rolls + mustard dip","ja":"麻薬キンパ：ミニのり巻き","zh":"麻药紫菜包饭：迷你饭卷"},
+{"icon":"star","ko":"육회","roman":"yukhoe","en":"Yukhoe: Korean beef tartare","ja":"ユッケ：韓国風牛肉のたたき","zh":"生拌牛肉：韩式牛肉塔塔"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Jongno 5-ga Stn (Line 1)\nSave this for your Seoul trip"}
