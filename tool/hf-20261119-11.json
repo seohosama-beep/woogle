@@ -1,0 +1,11 @@
+{"name":"hf-20261119-11","active":true,"badge":"SEOUL HOTEL TIPS","title_icon":"hotel","seed":1911,"key":5,
+"hook":"Checking out of a Seoul hotel? Say THIS",
+"item_label":"Checkout day Korean",
+"title":{"en":"4 Korean phrases for checkout day","ko":"체크아웃 날 쓰는 한국어 4","ja":"チェックアウトの日に使う韓国語4","zh":"退房当天用的韩语4句"},
+"items":[
+{"icon":"hotel","ko":"체크아웃할게요","roman":"chekeuauthalgeyo","en":"\"I'd like to check out\"","ja":"「チェックアウトします」","zh":"“我要退房”"},
+{"icon":"shop","ko":"미니바 안 썼어요","roman":"minibar an sseosseoyo","en":"\"I didn't use the minibar\"","ja":"「ミニバーは使っていません」","zh":"“我没用迷你吧”"},
+{"icon":"star","ko":"영수증 주세요","roman":"yeongsujeung juseyo","en":"\"Receipt, please\"","ja":"「領収書をください」","zh":"“请给我收据”"},
+{"icon":"subway","ko":"공항철도 어디서 타요?","roman":"gonghang-cheoldo eodiseo tayo?","en":"\"Where do I take the airport train?\"","ja":"「空港鉄道はどこで乗りますか？」","zh":"“机场铁路在哪里坐？”"}],
+"cta_en":"Which one will you use first?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
