@@ -1,0 +1,11 @@
+{"name":"hf-20261119-15","active":true,"badge":"SEOUL HOTEL TIPS","title_icon":"subway","seed":1915,"key":2,
+"hook":"Landing at Incheon? DO THIS before your hotel",
+"item_label":"Airport to hotel",
+"title":{"en":"Incheon Airport → Seoul hotel: 4 steps","ko":"인천공항에서 호텔까지 4단계","ja":"仁川空港からホテルまで4ステップ","zh":"仁川机场到首尔酒店4步"},
+"items":[
+{"icon":"shop","ko":"티머니 카드 사기","roman":"T-money kadeu sagi","en":"Buy a T-money card at a convenience store","ja":"コンビニでT-moneyを買う","zh":"在便利店买T-money卡"},
+{"icon":"subway","ko":"공항철도 타기","roman":"gonghang-cheoldo tagi","en":"Take AREX to Seoul Station","ja":"空港鉄道でソウル駅へ","zh":"坐机场铁路到首尔站"},
+{"icon":"map","ko":"호텔 주소 한글로 저장","roman":"hotel juso hangeullo jeojang","en":"Save your hotel address in Korean","ja":"ホテルの住所を韓国語で保存","zh":"用韩文保存酒店地址"},
+{"icon":"hotel","ko":"짐 먼저 맡기기","roman":"jim meonjeo matgigi","en":"Early? Ask the front desk to keep your bags","ja":"早く着いたら荷物を預ける","zh":"早到就先寄存行李"}],
+"cta_en":"Which step do you always forget?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
