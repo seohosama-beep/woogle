@@ -1,0 +1,11 @@
+{"name":"hf-20261119-13","active":true,"badge":"SEOUL FOOD","title_icon":"coffee","seed":1913,"key":3,
+"hook":"4 Korean bakery breads you MUST try",
+"item_label":"Korean bakery",
+"title":{"en":"Korean bakery: 4 must-try breads","ko":"한국 빵집 꼭 먹어볼 빵 4","ja":"韓国のパン屋で食べたいパン4","zh":"韩国面包店必吃面包4种"},
+"items":[
+{"icon":"shop","ko":"소금빵","roman":"sogeumppang","en":"Salt bread — buttery & salty","ja":"塩パン","zh":"盐面包"},
+{"icon":"pancake","ko":"단팥빵","roman":"danpatppang","en":"Sweet red bean bun","ja":"あんパン","zh":"红豆面包"},
+{"icon":"egg","ko":"크림빵","roman":"keurimppang","en":"Custard cream bun","ja":"クリームパン","zh":"奶油面包"},
+{"icon":"star","ko":"소보로빵","roman":"soboroppang","en":"Crunchy crumble-top bun","ja":"ソボロパン","zh":"酥皮菠萝面包"}],
+"cta_en":"Which one would you pick?\n1, 2, 3 or 4",
+"cta2_en":"Save this for your Seoul trip"}
