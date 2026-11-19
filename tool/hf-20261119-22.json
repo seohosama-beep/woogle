@@ -1,0 +1,10 @@
+{"name":"hf-20261119-22","active":true,"badge":"SEOUL FOOD","title_icon":"shop","seed":1922,"key":4,
+"hook":"Pay with OLD COINS at this Seoul market",
+"item_label":"Tongin Market",
+"title":{"en":"Tongin Market coin lunchbox: 3 steps","ko":"통인시장 엽전 도시락 3단계","ja":"通仁市場 葉銭弁当","zh":"通仁市场铜钱便当"},
+"items":[
+{"icon":"star","ko":"엽전 바꾸기","roman":"yeopjeon bakkugi","en":"Swap cash for brass coins + lunch tray","ja":"お金を昔の銅銭に両替","zh":"先把现金换成铜钱"},
+{"icon":"egg","ko":"반찬 골라 담기","roman":"banchan golla damgi","en":"Walk the stalls, pay coins per side dish","ja":"屋台でおかずを選んで銅銭で","zh":"逛摊位，用铜钱选小菜"},
+{"icon":"ricecake","ko":"기름떡볶이","roman":"gireum tteokbokki","en":"Oil tteokbokki: stir-fried, not soupy","ja":"油トッポッキ：炒めるタイプ","zh":"油炒年糕：干炒不带汤"}],
+"cta_en":"Which step looks most fun?\n1, 2 or 3",
+"cta2_en":"Gyeongbokgung Stn (Line 3)\nSave this for your Seoul trip"}
