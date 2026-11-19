@@ -1,0 +1,10 @@
+{"name":"hf-20261119-20","active":true,"badge":"WHERE TO STAY","title_icon":"hotel","seed":2019,"key":5,
+"hook":"Day trips from Seoul? Book your hotel HERE",
+"item_label":"Stay near",
+"title":{"en":"3 Seoul areas for train & bus trips","ko":"당일치기 여행자 숙소 동네 3곳","ja":"日帰り旅行に便利な宿エリア3つ","zh":"适合一日游的首尔住宿区3个"},
+"items":[
+{"icon":"subway","ko":"서울역","roman":"Seoul-yeok","en":"Seoul Station: KTX + AREX + Line 1·4","ja":"ソウル駅：KTX・空港鉄道・1·4号線","zh":"首尔站：KTX・机场铁路・1·4号线"},
+{"icon":"subway","ko":"용산역","roman":"Yongsan-yeok","en":"Yongsan: KTX trains + Line 1","ja":"龍山駅：KTX・1号線","zh":"龙山站：KTX・1号线"},
+{"icon":"map","ko":"고속터미널","roman":"Gosok Teomineol","en":"Express Bus Terminal: Line 3·7·9","ja":"高速ターミナル：3·7·9号線","zh":"高速巴士客运站：3·7·9号线"}],
+"cta_en":"Where would you stay?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
