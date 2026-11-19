@@ -1,0 +1,10 @@
+{"name":"hf-20261120-07","active":true,"badge":"WHERE TO STAY","title_icon":"hotel","seed":2007,"key":3,
+"hook":"Landing at Incheon? Stay near these 3 AREX stops",
+"item_label":"Stay near",
+"title":{"en":"3 AREX stops for an easy airport trip","ko":"공항철도 타기 편한 숙소 동네 3곳","ja":"空港鉄道で楽な宿エリア3つ","zh":"坐机场铁路方便的住宿区3个"},
+"items":[
+{"icon":"subway","ko":"홍대입구역","roman":"Hongdae Ipgu-yeok","en":"Hongik Univ.: AREX + Line 2 · nightlife","ja":"弘大入口：空港鉄道・2号線・夜遊び","zh":"弘大入口：机场铁路・2号线・夜生活"},
+{"icon":"subway","ko":"공덕역","roman":"Gongdeok-yeok","en":"Gongdeok: AREX + Line 5·6","ja":"孔徳駅：空港鉄道・5·6号線","zh":"孔德站：机场铁路・5·6号线"},
+{"icon":"map","ko":"마곡나루역","roman":"Magongnaru-yeok","en":"Magongnaru: AREX + Line 9 · Seoul Botanic Park","ja":"麻谷ナル：空港鉄道・9号線・植物園","zh":"麻谷渡口：机场铁路・9号线・植物园"}],
+"cta_en":"Where would you stay?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
