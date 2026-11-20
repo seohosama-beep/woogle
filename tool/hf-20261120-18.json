@@ -1,0 +1,10 @@
+{"name":"hf-20261120-18","active":true,"badge":"SEOUL FOOD","title_icon":"skewer","seed":2018,"key":7,
+"hook":"POV: your first night in Myeongdong",
+"item_label":"Myeongdong Street Food",
+"title":{"en":"Myeongdong street food: 3 must-eats","ko":"명동 길거리 음식 꼭 먹을 3가지","ja":"明洞の屋台で食べたい3つ","zh":"明洞街头小吃必吃3样"},
+"items":[
+{"icon":"potato","ko":"회오리감자","roman":"hoeori gamja","en":"Tornado potato: spiral fries on a stick","ja":"トルネードポテト：らせん揚げポテト","zh":"龙卷风土豆：串起来的螺旋薯片"},
+{"icon":"skewer","ko":"닭꼬치","roman":"dakkkochi","en":"Dakkkochi: grilled chicken skewer","ja":"タッコチ：甘辛焼き鳥串","zh":"鸡肉串：甜辣烤鸡串"},
+{"icon":"ricecake","ko":"떡꼬치","roman":"tteokkkochi","en":"Tteokkkochi: glazed rice cake skewer","ja":"トックコチ：甘辛お餅の串","zh":"年糕串：甜辣酱烤年糕"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Myeongdong Stn (Line 4)\nSave this for your Seoul trip"}
