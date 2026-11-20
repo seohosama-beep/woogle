@@ -1,0 +1,10 @@
+{"name":"hf-20261120-09","active":true,"badge":"SEOUL FOOD","title_icon":"pancake","seed":2009,"key":5,
+"hook":"3 WINTER street snacks you MUST try in Seoul",
+"item_label":"Winter snack",
+"title":{"en":"Seoul winter street snacks: 3 must-tries","ko":"서울 겨울 길거리 간식 3가지","ja":"ソウル冬の屋台おやつ3つ","zh":"首尔冬季街头小吃3样"},
+"items":[
+{"icon":"pancake","ko":"붕어빵","roman":"bungeo-ppang","en":"Bungeoppang: fish-shaped bun, red bean inside","ja":"プンオパン：たい焼き風・あんこ","zh":"鲫鱼饼：鱼形红豆馅"},
+{"icon":"egg","ko":"계란빵","roman":"gyeran-ppang","en":"Gyeranppang: a whole egg baked in sweet bread","ja":"ケランパン：卵まるごと焼きパン","zh":"鸡蛋面包：整颗蛋烤进面包"},
+{"icon":"star","ko":"군고구마","roman":"gun-goguma","en":"Gun-goguma: hot roasted sweet potato","ja":"焼き芋：あつあつのサツマイモ","zh":"烤红薯：热乎乎的冬日味道"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Look for street carts in winter\nSave this for your Seoul trip"}
