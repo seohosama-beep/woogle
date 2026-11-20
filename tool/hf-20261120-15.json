@@ -1,0 +1,10 @@
+{"name":"hf-20261120-15","active":true,"badge":"HOTEL TIPS","title_icon":"subway","seed":2015,"key":7,
+"hook":"3 T-money tricks nobody tells you",
+"item_label":"T-money tip",
+"title":{"en":"3 T-money tips for your Seoul stay","ko":"서울 여행 티머니 꿀팁 3","ja":"ソウル旅行T-moneyの裏ワザ3つ","zh":"首尔旅行T-money小技巧3个"},
+"items":[
+{"icon":"shop","ko":"편의점에서 충전","roman":"pyeonuijeom-eseo chungjeon","en":"Buy & top up at CU · GS25 · 7-Eleven (cash)","ja":"コンビニで購入・チャージ（現金）","zh":"便利店购买和充值（现金）"},
+{"icon":"subway","ko":"내릴 때도 찍기","roman":"naeril ttaedo jjikgi","en":"Tap again when you get off the bus → transfer discount","ja":"バスを降りる時もタッチ→乗換割引","zh":"下公交时也要刷卡→换乘优惠"},
+{"icon":"star","ko":"택시도 티머니","roman":"taeksido T-money","en":"Most Seoul taxis accept T-money","ja":"ソウルのタクシーも大半がT-money可","zh":"首尔大部分出租车可刷T-money"}],
+"cta_en":"Which tip helps most?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
