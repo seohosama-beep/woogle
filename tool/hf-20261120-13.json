@@ -1,0 +1,10 @@
+{"name":"hf-20261120-13","active":true,"badge":"SEOUL FOOD","title_icon":"shop","seed":2013,"key":4,
+"hook":"3 snacks locals line up for at Yeongcheon Market",
+"item_label":"Yeongcheon Market",
+"title":{"en":"Yeongcheon Market: 3 must-eats","ko":"영천시장 꼭 먹을 3가지","ja":"霊泉市場で食べたい3つ","zh":"灵泉市场必吃3样"},
+"items":[
+{"icon":"ricecake","ko":"꽈배기","roman":"kkwabaegi","en":"Kkwabaegi: twisted sugar donut","ja":"クァベギ：ねじりドーナツ","zh":"麻花甜甜圈：现炸裹糖"},
+{"icon":"ricecake","ko":"떡볶이","roman":"tteokbokki","en":"Tteokbokki: sweet & spicy rice cakes","ja":"トッポッキ：甘辛い餅炒め","zh":"炒年糕：甜辣年糕"},
+{"icon":"egg","ko":"만두","roman":"mandu","en":"Mandu: handmade Korean dumplings","ja":"マンドゥ：手作り韓国餃子","zh":"韩式饺子：手工现包"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Dongnimmun Stn (Line 3)\nSave this for your Seoul trip"}
