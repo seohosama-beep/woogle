@@ -1,0 +1,10 @@
+{"name":"hf-20261120-22","active":true,"badge":"SEOUL FOOD","title_icon":"ricecake","seed":2022,"key":5,
+"hook":"3 Korean rice cakes you MUST try",
+"item_label":"Tteok Shop Pick",
+"title":{"en":"Korean rice cake shop: 3 must-tries","ko":"떡집에서 꼭 먹어볼 떡 3가지","ja":"韓国の餅屋で食べたい3つ","zh":"韩国年糕店必尝3种"},
+"items":[
+{"icon":"ricecake","ko":"꿀떡","roman":"kkul-tteok","en":"Kkultteok: tiny balls that burst with sweet syrup","ja":"クルトック：かむと甘い蜜がとろり","zh":"蜂蜜糕：一咬就流出甜糖浆"},
+{"icon":"ricecake","ko":"바람떡","roman":"baram-tteok","en":"Baramtteok: half-moon cake, airy, red bean inside","ja":"パラムトック：半月形、中にあんこ","zh":"风糕：半月形，空心带红豆馅"},
+{"icon":"ricecake","ko":"찹쌀떡","roman":"chapssal-tteok","en":"Chapssaltteok: extra chewy, sweet red bean filling","ja":"チャプサルトック：もちもち大福","zh":"糯米糕：超软糯，红豆馅"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Find them at a 떡집 (tteokjip)\nSave this for your Seoul trip"}
