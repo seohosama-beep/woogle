@@ -1,0 +1,10 @@
+{"name":"hf-20261121-07","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2107,"key":5,
+"hook":"DON'T panic in your Seoul hotel room",
+"item_label":"Room tip",
+"title":{"en":"3 hotel room surprises in Korea","ko":"한국 호텔 방 당황 포인트 3","ja":"韓国ホテルで戸惑う3つ","zh":"韩国酒店房间3个意外"},
+"items":[
+{"icon":"shop","ko":"칫솔 챙기기","roman":"chitsol chaenggigi","en":"No free toothbrush? Many hotels stopped it — bring one or grab at a convenience store","ja":"無料の歯ブラシなし？持参かコンビニで","zh":"没有免费牙刷？自带或去便利店买"},
+{"icon":"hotel","ko":"엘리베이터 카드 태그","roman":"ellibeiteo kadeu taegeu","en":"Elevator won't go? Tap your key card first","ja":"エレベーターが動かない？まずカードキー","zh":"电梯不动？先刷房卡"},
+{"icon":"star","ko":"욕실 바닥 젖음","roman":"yoksil badak jeojeum","en":"Wet-room bathroom: the floor gets wet — use the bath slippers","ja":"浴室は床まで濡れる、バス用スリッパを","zh":"浴室地面会湿，穿浴室拖鞋"}],
+"cta_en":"Which one would surprise you?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
