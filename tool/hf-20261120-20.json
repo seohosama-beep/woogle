@@ -1,0 +1,10 @@
+{"name":"hf-20261120-20","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2020,"key":3,
+"hook":"Your Korean hotel room will confuse you",
+"item_label":"Room tip",
+"title":{"en":"3 things in a Korean hotel room","ko":"한국 호텔 방에서 당황하는 3가지","ja":"韓国のホテルの部屋で戸惑う3つ","zh":"韩国酒店房间里让人懵的3件事"},
+"items":[
+{"icon":"hotel","ko":"카드키 꽂기","roman":"kadeuki kkotgi","en":"No power? Put the key card in the wall slot","ja":"電気がつかない？カードキーを壁に差す","zh":"没电？把房卡插进墙上卡槽"},
+{"icon":"star","ko":"온돌방","roman":"ondol-bang","en":"Ondol room = heated floor, sleep on a floor mattress","ja":"オンドル部屋＝床暖房、床に布団で寝る","zh":"温突房＝地暖，睡在地铺上"},
+{"icon":"shop","ko":"220V 콘센트","roman":"220V konsenteu","en":"220V round 2-pin plugs (Type C/F) — bring an adapter","ja":"220V丸型2ピン（C/F型）変換プラグを","zh":"220V圆形双孔插座（C/F型），带转换头"}],
+"cta_en":"Which one surprised you?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
