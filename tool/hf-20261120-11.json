@@ -1,0 +1,10 @@
+{"name":"hf-20261120-11","active":true,"badge":"WHERE TO STAY","title_icon":"hotel","seed":2011,"key":5,
+"hook":"DON'T book only in Myeongdong. Try these 3",
+"item_label":"Underrated area",
+"title":{"en":"3 underrated Seoul areas to stay","ko":"명동 말고 숨은 숙소 동네 3곳","ja":"明洞以外の穴場宿エリア3つ","zh":"明洞以外的小众住宿区3个"},
+"items":[
+{"icon":"map","ko":"여의도","roman":"Yeouido","en":"Line 5·9 · Han River park · The Hyundai Seoul","ja":"5·9号線・漢江公園・ザ現代ソウル","zh":"5·9号线・汉江公园・The Hyundai首尔"},
+{"icon":"subway","ko":"신촌","roman":"Sinchon","en":"Line 2 · student vibe · cafes & BBQ","ja":"2号線・学生街・カフェと焼肉","zh":"2号线・大学城氛围・咖啡和烤肉"},
+{"icon":"star","ko":"을지로","roman":"Euljiro","en":"Line 2·3 · retro alleys · walk to Myeongdong","ja":"2·3号線・レトロ路地・明洞へ徒歩","zh":"2·3号线・复古小巷・步行到明洞"}],
+"cta_en":"Where would you stay?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
