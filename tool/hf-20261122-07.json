@@ -1,0 +1,10 @@
+{"name":"hf-20261122-07","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2207,"key":5,
+"hook":"Forgot something? Find these near your Seoul hotel",
+"item_label":"Near your hotel",
+"title":{"en":"3 spots near your Seoul hotel","ko":"호텔 근처 꼭 알아둘 곳 3","ja":"ホテル近くの便利スポット 3つ","zh":"酒店附近必知的地方 3个"},
+"items":[
+{"icon":"shop","ko":"빨래방 어디예요?","roman":"ppallaebang eodiyeyo?","en":"Long trip? Ask for a self-service laundromat nearby","ja":"長旅ならセルフコインランドリーを","zh":"长途旅行？找附近的自助洗衣房"},
+{"icon":"star","ko":"다이소","roman":"daiso","en":"Forgot an adapter or umbrella? Daiso has travel basics","ja":"変換プラグや傘はダイソーで","zh":"忘带转换插头或雨伞？去大创"},
+{"icon":"map","ko":"약국 어디예요?","roman":"yakguk eodiyeyo?","en":"Feeling sick? Look for the 약국 (pharmacy) sign","ja":"体調不良なら「약국(薬局)」の看板を","zh":"身体不舒服？找“약국(药店)”招牌"}],
+"cta_en":"Which one would you need?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
