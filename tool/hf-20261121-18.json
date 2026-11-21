@@ -1,0 +1,10 @@
+{"name":"hf-20261121-18","active":true,"badge":"SEOUL FOOD","title_icon":"shop","seed":2118,"key":5,
+"hook":"POV: you pick your fish downstairs, eat it upstairs",
+"item_label":"Noryangjin Fish Market",
+"title":{"en":"Noryangjin Fish Market in 3 steps","ko":"노량진수산시장 3단계","ja":"鷺梁津水産市場 3ステップ","zh":"鹭梁津水产市场 3步"},
+"items":[
+{"icon":"shop","ko":"회 떠 주세요","roman":"hoe tteo juseyo","en":"Pick a live fish at a stall, then say: please slice it raw","ja":"1階で魚を選んで「刺身にしてください」","zh":"在一楼选活鱼，说：请帮我切生鱼片"},
+{"icon":"map","ko":"위층 식당","roman":"wicheung sikdang","en":"Carry it upstairs to a restaurant that sets the table for you","ja":"上の階の食堂で食べられる","zh":"拿到楼上餐厅，帮你摆好餐桌"},
+{"icon":"egg","ko":"매운탕 끓여 주세요","roman":"maeuntang kkeuryeo juseyo","en":"Leftover fish bones? Ask for a spicy fish stew","ja":"残ったアラで「メウンタンにしてください」","zh":"剩下的鱼骨可以做辣鱼汤"}],
+"cta_en":"Which step excites you most?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
