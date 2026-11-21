@@ -1,0 +1,10 @@
+{"name":"hf-20261121-22","active":true,"badge":"SEOUL FOOD","title_icon":"ricecake","seed":2122,"key":5,
+"hook":"Order like a local at a Korean snack bar",
+"item_label":"Bunsik Order",
+"title":{"en":"Say \"tteok-twi-sun\" at a bunsik shop","ko":"분식집 주문은 '떡튀순'","ja":"粉食店では「トッティスン」","zh":"小吃店就点「炒年糕·炸物·血肠」"},
+"items":[
+{"icon":"ricecake","ko":"떡볶이","roman":"tteok-bok-ki","en":"TTEOK: chewy rice cakes in sweet & spicy red sauce","ja":"トッポッキ：甘辛ソースのもちもち餅","zh":"炒年糕：甜辣酱里的软糯年糕"},
+{"icon":"potato","ko":"튀김","roman":"twi-gim","en":"TWI: crispy fried snacks, dip them in the tteokbokki sauce","ja":"ティギム：揚げ物をトッポッキのソースに","zh":"炸物：蘸炒年糕的酱汁吃"},
+{"icon":"skewer","ko":"순대","roman":"sun-dae","en":"SUN: Korean blood sausage, often served with salt or sauce","ja":"スンデ：韓国式腸詰め、塩やソースで","zh":"血肠：韩式米肠，蘸盐或酱吃"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
