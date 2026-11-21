@@ -1,0 +1,10 @@
+{"name":"hf-20261121-20","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2120,"key":5,
+"hook":"POV: your first shower in a Korean hotel",
+"item_label":"Hotel tip",
+"title":{"en":"3 hotel bathroom surprises in Korea","ko":"한국 호텔 욕실 당황 포인트 3","ja":"韓国ホテルの浴室で戸惑う3つ","zh":"韩国酒店浴室的3个意外"},
+"items":[
+{"icon":"hotel","ko":"샤워 전환 레버","roman":"syawo jeonhwan lebeo","en":"Water only from the tap? Pull or turn the lever to switch to the shower","ja":"蛇口のレバーでシャワーに切り替え","zh":"拉或转动龙头上的拨杆切换到花洒"},
+{"icon":"star","ko":"휴지는 변기에","roman":"hyujineun byeongie","en":"Toilet paper goes in the toilet — flush it","ja":"トイレットペーパーは便器に流してOK","zh":"厕纸直接丢进马桶冲走"},
+{"icon":"shop","ko":"미니바 확인","roman":"minibar hwagin","en":"Snacks and drinks in the room fridge may cost extra — ask the front desk","ja":"冷蔵庫の飲み物は有料の場合あり、フロントに確認","zh":"房间冰箱里的饮料零食可能收费，先问前台"}],
+"cta_en":"Which one surprised you?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
