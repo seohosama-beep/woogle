@@ -1,0 +1,10 @@
+{"name":"hf-20261121-09","active":true,"badge":"SEOUL DESSERT","title_icon":"coffee","seed":2109,"key":3,
+"hook":"3 Korean cafe desserts you MUST try",
+"item_label":"Cafe Pick",
+"title":{"en":"Korean cafe desserts: 3 must-tries","ko":"한국 카페 디저트 꼭 먹어볼 3가지","ja":"韓国カフェで食べたいスイーツ3つ","zh":"韩国咖啡馆必尝甜点3种"},
+"items":[
+{"icon":"pancake","ko":"크로플","roman":"keu-ro-peul","en":"Croffle: croissant pressed in a waffle iron, crispy & buttery","ja":"クロッフル：クロワッサンをワッフル焼きに","zh":"可颂华夫：可颂用华夫机压烤，外酥内软"},
+{"icon":"star","ko":"뚱카롱","roman":"ttung-ka-rong","en":"Ttungcarons: extra-thick 'fat' macarons, loaded with filling","ja":"トゥンカロン：具たっぷり極厚マカロン","zh":"胖马卡龙：夹馅超厚的韩式马卡龙"},
+{"icon":"skewer","ko":"탕후루","roman":"tang-hu-ru","en":"Tanghulu: fruit on a stick with a crunchy sugar shell","ja":"タンフル：フルーツ串にパリパリ飴がけ","zh":"糖葫芦：水果串裹上脆糖壳"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
