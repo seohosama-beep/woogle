@@ -1,0 +1,10 @@
+{"name":"hf-20261121-13","active":true,"badge":"SEOUL BAKERY","title_icon":"shop","seed":2113,"key":5,
+"hook":"3 Korean bakery breads you've NEVER seen",
+"item_label":"Bakery Pick",
+"title":{"en":"Korean bakery classics, part 2","ko":"한국 빵집 꼭 먹어볼 빵 3 (2탄)","ja":"韓国パン屋の定番パン3つ 第2弾","zh":"韩国面包店必吃面包3种 第2弹"},
+"items":[
+{"icon":"skewer","ko":"소시지빵","roman":"so-si-ji-ppang","en":"Sausage bread: soft bun + sausage, onion & mayo baked on top","ja":"ソーセージパン：ソーセージと玉ねぎ・マヨ","zh":"香肠面包：软面包配香肠、洋葱和蛋黄酱"},
+{"icon":"pancake","ko":"맘모스빵","roman":"mam-mo-seu-ppang","en":"Mammoth bread: giant bun filled with cream & red bean","ja":"マンモスパン：クリームあんの特大パン","zh":"猛犸面包：夹奶油和红豆的超大面包"},
+{"icon":"ricecake","ko":"찹쌀도넛","roman":"chap-ssal-do-neot","en":"Chapssal donut: chewy rice-flour donut with red bean inside","ja":"チャプサルドーナツ：もちもち餅ドーナツ","zh":"糯米甜甜圈：软糯外皮包红豆馅"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
