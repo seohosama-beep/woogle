@@ -1,0 +1,10 @@
+{"name":"hf-20261121-11","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2111,"key":7,
+"hook":"POV: night one in a Seoul hotel room",
+"item_label":"Room tip",
+"title":{"en":"3 more hotel room surprises","ko":"호텔 방 당황 포인트 3 (2탄)","ja":"戸惑う3つ 第2弾","zh":"房间意外 第2弹"},
+"items":[
+{"icon":"star","ko":"방해 금지 버튼","roman":"banghae geumji beoteun","en":"Wall button by the door = Do Not Disturb / Make Up Room","ja":"ドア横のボタン＝起こさないで/清掃","zh":"门边按钮＝请勿打扰/请清扫"},
+{"icon":"hotel","ko":"욕조 없는 방 많아요","roman":"yokjo eomneun bang manayo","en":"Many business hotels: shower only, no bathtub — ask when booking","ja":"浴槽なしの部屋も多い、予約時に確認","zh":"很多商务酒店只有淋浴，预订时确认"},
+{"icon":"map","ko":"창문 조금만 열려요","roman":"changmun jogeumman yeollyeoyo","en":"High-floor windows open only a little — that's for safety","ja":"高層階の窓は安全のため少しだけ","zh":"高楼层窗户只能开一点（为了安全）"}],
+"cta_en":"Which one would surprise you?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
