@@ -1,0 +1,10 @@
+{"name":"hf-20261121-15","active":true,"badge":"HOTEL TIPS","title_icon":"hotel","seed":2115,"key":3,
+"hook":"Heavy suitcase in Seoul? Watch this",
+"item_label":"Luggage tip",
+"title":{"en":"3 suitcase tips for Seoul","ko":"서울 여행 캐리어 꿀팁 3","ja":"スーツケース術 3つ","zh":"行李箱小贴士 3个"},
+"items":[
+{"icon":"hotel","ko":"짐 맡아 주세요","roman":"jim mata juseyo","en":"Checked out but flying late? Ask the front desk to keep your bags","ja":"チェックアウト後もフロントで荷物預かり","zh":"退房后也可以请前台寄存行李"},
+{"icon":"subway","ko":"물품보관함","roman":"mulpum bogwanham","en":"Many subway stations have lockers — look for this sign","ja":"多くの地下鉄駅にコインロッカーあり","zh":"很多地铁站都有储物柜"},
+{"icon":"map","ko":"트렁크 열어 주세요","roman":"teureongkeu yeoreo juseyo","en":"Taxi with a suitcase? Say: please open the trunk","ja":"タクシーで「トランク開けてください」","zh":"打车时说：请打开后备箱"}],
+"cta_en":"Which tip helps you most?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
