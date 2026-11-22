@@ -1,0 +1,10 @@
+{"name":"hf-20261122-09","active":true,"badge":"SEOUL FOOD","title_icon":"ricecake","seed":2209,"key":3,
+"hook":"3 old-school Korean sweets you MUST try",
+"item_label":"Traditional Sweet",
+"title":{"en":"3 traditional Korean sweets","ko":"한국 전통 간식 3가지","ja":"韓国の伝統おやつ 3つ","zh":"韩国传统小吃 3种"},
+"items":[
+{"icon":"ricecake","ko":"인절미","roman":"injeolmi","en":"Injeolmi: chewy rice cake rolled in roasted soybean powder","ja":"インジョルミ：きな粉をまぶしたお餅","zh":"黄豆粉糕：裹满炒黄豆粉的软糯年糕"},
+{"icon":"pancake","ko":"약과","roman":"yakgwa","en":"Yakgwa: honey-soaked fried cookie, soft and sweet","ja":"ヤックァ：はちみつがしみた揚げ菓子","zh":"药果：浸满蜂蜜的油炸点心"},
+{"icon":"coffee","ko":"식혜","roman":"sikhye","en":"Sikhye: cold sweet rice drink, a jjimjilbang classic","ja":"シッケ：冷たく甘いお米のドリンク","zh":"甜米露：冰凉甜米饮，汗蒸房必喝"}],
+"cta_en":"Which one would you pick?\n1, 2 or 3",
+"cta2_en":"Save this for your Seoul trip"}
