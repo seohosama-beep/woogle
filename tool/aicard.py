@@ -1,4 +1,4 @@
-# 강력AI 카드뉴스 릴스 생성기 — python3 aicard.py spec.json
+# KANG AI 카드뉴스 릴스 생성기 — python3 aicard.py spec.json
 # spec: name, seed, key, title{top, l1, l2}, icon, items[{icon, t, d}], cta
 import json, sys, os, subprocess, numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -20,11 +20,11 @@ def center(d, s, y, f, col):
     d.text(((W - tw(d, s, f)) / 2, y), s, font=f, fill=col)
 
 def pill(im, y=250):
-    d = ImageDraw.Draw(im); f = F(40); s = '강력AI'
+    d = ImageDraw.Draw(im); f = F(40); s = 'KANG AI'
     w = tw(d, s, f) + 120; x = (W - w) // 2
     d.rounded_rectangle([x, y, x + w, y + 76], 38, fill=INK)
     d.ellipse([x + 12, y + 10, x + 68, y + 66], fill=ACC)
-    d.text((x + 26, y + 12), '강', font=F(34), fill=(255, 255, 255))
+    d.text((x + 25, y + 10), 'K', font=F(36), fill=(255, 255, 255))
     d.text((x + 82, y + 10), s, font=f, fill=(255, 255, 255))
 
 def icon(im, kind, cx, cy, r=110):
